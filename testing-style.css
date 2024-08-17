@@ -1,0 +1,26 @@
+#canvas-container {
+    margin-top: 10px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+    width: 640px;
+}
+
+#canvas-container>* {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+canvas {
+    height: 320px;
+    width: 640px;
+}
+
+.assets {
+    display: none;
+}
+
+.assets>img {
+    display: none;
+}

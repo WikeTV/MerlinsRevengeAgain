@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merlin's Revenge</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div style="overflow-x: hidden; margin-bottom: 2em;" id="main-div">
+        <canvas id="tile-selector" tabindex="4"></canvas>
+        <div style="display: flex; justify-content: space-around;">
+            <h3>Background</h3>
+            <h3>Foreground</h3>
+        </div>
+        <div style="display: flex; justify-content: space-around;">
+            <canvas id="background-tiles" tabindex="1"></canvas>
+            <canvas id="foreground-tiles" tabindex="2"></canvas>
+        </div>
+        <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+            <div style="text-align: center;">
+                <h3>Preview Scene</h3>
+                <div id="canvas-container" style="position: unset;">
+                    <canvas style="z-index: 20;" id="entity-preview" tabindex="5"></canvas>
+                    <canvas style="z-index: 10;" id="scene-preview"></canvas>
+                </div>
+            </div>
+            <div style="width: calc(100% * .25); text-align: center; padding-left: 10px;">
+                <h3>Select Entity To Place</h3>
+                <select id="entity-select"></select>
+                <div id="entity-attributes" style="text-align: left;"></div>
+                <div id="edit-form-container"></div>
+            </div>
+            <div style="text-align: center; padding-left: 10px; width: calc(100% * .25);">
+                <h3>File Actions</h3>
+                <div
+                    style="display: flex; flex-direction: column; align-items: flex-end; text-align: center; border: solid 1px grey; padding: 10px;">
+                    <form id="scene-save-form" enctype="multipart/form-data"
+                        style="width: 100%; display: flex; justify-content: space-between;">
+                        <label for="scene-name">Save Scene To File</label>
+                        <input id="scene-name" placeholder="scene" />
+                        <button id="save-scene-to-file-button">Save Scene To File</button>
+                    </form>
+                    <button id="save-scene-to-map-button">Save Scene To Map</button>
+                    <div style="margin: 20px;"></div>
+                    <form id="scene-load-form" enctype="multipart/form-data"
+                        style="width: 100%; display: flex; justify-content: space-between;">
+                        <label for="load-scene">Load Scene From File</label>
+                        <input id="load-scene" name="load-scene-file" placeholder="mr1/1-1" type="file" />
+                        <button id="load-button" type="submit">Load Scene</button>
+                    </form>
+                    <div style="margin: 20px 0 20px 0; width: 100%">
+                        <div style="border-bottom: solid 1px black;"></div>
+                    </div>
+
+                    <form id="map-save-form" enctype="multipart/form-data"
+                        style="width: 100%; display: flex; justify-content: space-between;">
+                        <label for="map-name">Save Map To File</label>
+                        <input id="map-name" placeholder="mr1" type="text" />
+                        <button id="save-map-button">Save Map</button>
+                    </form>
+                    <div style="margin: 20px;"></div>
+                    <form id="map-load-form" enctype="multipart/form-data"
+                        style="width: 100%; display: flex; justify-content: space-between;">
+                        <label for="load-map">Load Map From File</label>
+                        <input id="load-map" name="load-map-file" placeholder="mr1/1-1" type="file" />
+                        <button type="submit">Load Map</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="assets">
+        <img id="tileset" src="./public/assets/background.png" />
+        <img id="ui-assets" src="./public/assets/ui.png" />
+        <img id="character-sprites" src="./public/assets/units.png" />
+    </div>
+    <script type="module" src="./src/mapMakerIndex.js"></script>
+</body>
+
+</html>

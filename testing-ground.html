@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./testing-style.css" />
+</head>
+
+<body>
+    <div id="main"></div>
+    <div id="canvas-container">
+        <canvas style="z-index: 10;" id="canvas-2" height="320" width="640"></canvas>
+        <canvas style="z-index: 20;" id="canvas-1" height="320" width="640" tabindex="1"></canvas>
+    </div>
+    <div class="assets">
+        <img id="tileset" src="./public/assets/background.png" />
+        <img id="ui-sprites" src="./public/assets/ui.png" />
+        <img id="character-sprites" src="./public/assets/units.png" />
+    </div>
+    <script type="module" src="./src/testing.js"></script>
+</body>
+
+</html>
