@@ -1,6 +1,6 @@
 export const publicJSONFileLoader = async (filePath) => {
     let fileData;
-    await fetch(`/public/${filePath}`)
+    await fetch(`public/${filePath}`)
         .then((res) => res.json())
         .then((data) => {
             fileData = data;
@@ -10,7 +10,7 @@ export const publicJSONFileLoader = async (filePath) => {
 
 export const publicGenericFileLoader = async (filePath) => {
     let fileData;
-    await fetch(`/public/${filePath}`)
+    await fetch(`public/${filePath}`)
         .then((res) => res.text())
         .then((data) => {
             fileData = data;
