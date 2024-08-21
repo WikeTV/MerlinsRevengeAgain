@@ -1,4 +1,4 @@
-import unitSprites from "../../spriteDefinitions/units.js";
+import { unitTileMap } from "../../spriteDefinitions/units.js";
 import { createEntity, getHitboxBounds, teams } from "../entity.js";
 import { getVector, immutableCopy } from "../../utils/helper.js";
 import { ANIMATION_SLIDES_PER_FRAME } from "../../utils/constants.js";
@@ -57,7 +57,7 @@ const DEFAULT_PROJECTILE = {
     collisionCenterOffset: { x: 0, y: 0, w: null, h: null }, // Hitbox of prejectile to determine when an enemy had been struck
     states: {
         inFlight: {
-            animationFrames: [unitSprites.frames["gobarrow.tif"]],
+            animationFrames: [unitTileMap.frames["gobarrow.tif"]],
             updateState: ({ currentEntityState, entities }) => {
                 const impactedEnemy = detectProjectileHitEntity(
                     currentEntityState,
@@ -103,7 +103,7 @@ const DEFAULT_PROJECTILE = {
             },
         },
         terminal: {
-            animationFrames: [unitSprites.frames["gobarrowingrass.tif"]],
+            animationFrames: [unitTileMap.frames["gobarrowingrass.tif"]],
             onFinish: ({ currentEntityState }) => {
                 const nextEntityState = Object.assign({}, currentEntityState, {
                     shouldDespawn: true,

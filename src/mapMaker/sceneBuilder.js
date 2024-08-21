@@ -9,7 +9,7 @@ import {
     getEntitiesForSaving,
 } from "../enitites/entityManager.js";
 import { entityTypes, createEntityOfType } from "../enitites/entityFactory.js";
-import tileSprites from "../spriteDefinitions/background.js";
+import { backgroundTileMap } from "../spriteDefinitions/background.js";
 import { getSceneManager } from "../scenes/sceneManager.js";
 import {
     createCustomizedElement,
@@ -114,7 +114,7 @@ export const getSceneBuilder = (options = {}) => {
     // Load all tile sprites into the EntityManager, to handle them in a standard way.
     // these will be rendered later
     const tileSelectorEntityManager = Array.from(
-        Object.entries(tileSprites.frames)
+        Object.entries(backgroundTileMap.frames)
     ).reduce(
         (entityManagerState, [tileName, tileSpriteDefinition]) => {
             return entityManagerState.createAndSpawnEntity({

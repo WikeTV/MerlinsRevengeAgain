@@ -1,4 +1,4 @@
-import unitSprites from "../../spriteDefinitions/units.js";
+import { unitTileMap } from "../../spriteDefinitions/units.js";
 import { immutableCopy } from "../../utils/helper.js";
 import { createMagicBlast } from "../projectiles/magic/magicBlast.js";
 import { emitMagicThrow } from "../../events/onMagicThrow.js";
@@ -99,7 +99,8 @@ const updatePlayerState = function (params) {
 };
 
 const handleCastingStateUpdate = (params) => {
-    const { currentEntityState, userInput, entities, scalingMultiplier } = params;
+    const { currentEntityState, userInput, entities, scalingMultiplier } =
+        params;
     const nextPlayerState = Object.assign({}, updatePlayerState(params));
     // Handle magic casting
     if (
@@ -156,24 +157,24 @@ const Player = (initialValues = {}) => {
         isWalking: false,
         states: {
             idle: {
-                animationFrames: [{ ...unitSprites.frames["WWLK0001.tif"] }],
+                animationFrames: [{ ...unitTileMap.frames["WWLK0001.tif"] }],
                 updateState: updatePlayerState,
             },
             walking: {
-                animationFrames: Array.from(unitSprites.animations["WWLK"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["WWLK"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: updatePlayerState,
             },
             casting: {
-                animationFrames: Array.from(unitSprites.animations["CH"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["CH"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: handleCastingStateUpdate,
             },
             castingAndWalking: {
-                animationFrames: Array.from(unitSprites.animations["CW"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["CW"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: handleCastingStateUpdate,
             },
@@ -187,8 +188,8 @@ const Player = (initialValues = {}) => {
                     newEntityState.frameCount = 0;
                     return newEntityState;
                 },
-                animationFrames: Array.from(unitSprites.animations["FI"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["FI"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: updatePlayerState,
             },
@@ -202,8 +203,8 @@ const Player = (initialValues = {}) => {
                     newEntityState.frameCount = 0;
                     return newEntityState;
                 },
-                animationFrames: Array.from(unitSprites.animations["FW"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["FW"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: updatePlayerState,
             },

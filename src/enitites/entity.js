@@ -15,7 +15,7 @@ import {
     generateUUID,
     immutableCopy,
 } from "../utils/helper.js";
-import unitSprites from "../spriteDefinitions/units.js";
+import { unitTileMap } from "../spriteDefinitions/units.js";
 import { Vector2D } from "../utils/Vector2D.js";
 
 /**
@@ -68,8 +68,8 @@ const DEFAULT_ENTITY = Object.freeze({
     collisionCenterOffset: { x: 0, y: 0, w: null, h: null }, // Hitbox bounds of entity (point or rectangle offset from center)
     states: {
         idle: {
-            animationFrames: Array.from(unitSprites.animations["Bmfi"]).map(
-                (frameName) => ({ ...unitSprites.frames[frameName] })
+            animationFrames: Array.from(unitTileMap.animations["Bmfi"]).map(
+                (frameName) => ({ ...unitTileMap.frames[frameName] })
             ),
             updateState: ({ currentEntityState }) => {
                 return immutableCopy(currentEntityState);

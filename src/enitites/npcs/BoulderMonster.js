@@ -1,5 +1,5 @@
 import { createNpc } from "./createNpc.js";
-import unitSprites from "../../spriteDefinitions/units.js";
+import { unitTileMap } from "../../spriteDefinitions/units.js";
 
 const boulderMonster = (initialValues) => {
     const { update: baseUpdate } = initialValues;
@@ -11,21 +11,21 @@ const boulderMonster = (initialValues) => {
         animationStates: {
             idle: {
                 isReversed: true,
-                animationFrames: [{ ...unitSprites.frames["bm2.tif"] }],
+                animationFrames: [{ ...unitTileMap.frames["bm2.tif"] }],
             },
             recoil: {
                 isReversed: true,
-                animationFrames: [{ ...unitSprites.frames["bm2.tif"] }],
+                animationFrames: [{ ...unitTileMap.frames["bm2.tif"] }],
             },
             walking: {
-                animationFrames: Array.from(unitSprites.animations["B2wa"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["B2wa"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
             },
             attacking: {
                 noLoop: true,
-                animationFrames: Array.from(unitSprites.animations["Bmfi"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["Bmfi"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
             },
         },

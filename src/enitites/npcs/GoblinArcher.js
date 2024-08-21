@@ -1,4 +1,4 @@
-import unitSprites from "../../spriteDefinitions/units.js";
+import { unitTileMap } from "../../spriteDefinitions/units.js";
 import { createNpc, useNpcAI } from "./createNpc.js";
 import {
     createProjectile,
@@ -24,7 +24,7 @@ const createGoblinArrow = ({ x, y, team, targetCoordinate } = {}) => {
         collisionCenterOffset: { x: -8, y: 0 },
         states: {
             inFlight: {
-                animationFrames: [{ ...unitSprites.frames["gobarrow.tif"] }],
+                animationFrames: [{ ...unitTileMap.frames["gobarrow.tif"] }],
                 updateState: ({ currentEntityState, entities }) => {
                     const impactedEnemy = detectProjectileHitEntity(
                         currentEntityState,
@@ -75,7 +75,7 @@ const createGoblinArrow = ({ x, y, team, targetCoordinate } = {}) => {
             terminal: {
                 // Don't stay in the ground forever. Maybe 10 frames (1 sec)?
                 animationFrames: Array.from(new Array(5)).map(
-                    () => unitSprites.frames["gobarrowingrass.tif"]
+                    () => unitTileMap.frames["gobarrowingrass.tif"]
                 ),
                 onFinish: ({ currentEntityState }) => {
                     const nextEntityState = Object.assign(
@@ -107,26 +107,26 @@ const GoblinArcher = (initialValues) => {
         states: {
             idle: {
                 animationFrames: [
-                    { ...unitSprites.frames["goblin_load_arrow01.bmp"] },
+                    { ...unitTileMap.frames["goblin_load_arrow01.bmp"] },
                 ],
                 updateState: goblinUpdateState,
             },
             recoil: {
-                animationFrames: Array.from(unitSprites.animations["GARE"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["GARE"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: defaultRecoilStateUpdate,
             },
             walking: {
-                animationFrames: Array.from(unitSprites.animations["Garu"]).map(
-                    (frameName) => ({ ...unitSprites.frames[frameName] })
+                animationFrames: Array.from(unitTileMap.animations["Garu"]).map(
+                    (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
                 updateState: goblinUpdateState,
             },
             attacking: {
                 animationFrames: Array.from(
-                    unitSprites.animations["goblin_load_arrow"]
-                ).map((frameName) => ({ ...unitSprites.frames[frameName] })),
+                    unitTileMap.animations["goblin_load_arrow"]
+                ).map((frameName) => ({ ...unitTileMap.frames[frameName] })),
                 onFinish: ({ currentEntityState }) => {
                     // When goblinArcher finishes the "attacking" animation, it should fire an arrow at its target
 

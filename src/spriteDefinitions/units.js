@@ -1,4 +1,4 @@
-export default {
+export const unitTileMap = {
     frames: {
         "acid.tif": {
             frame: { x: 56, y: 0, w: 20, h: 9 },

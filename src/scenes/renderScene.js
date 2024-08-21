@@ -1,4 +1,4 @@
-import tileSet from "../spriteDefinitions/background.js";
+import { backgroundTileMap } from "../spriteDefinitions/background.js";
 
 export const renderSceneTiles = (
     canvasElement,
@@ -10,14 +10,15 @@ export const renderSceneTiles = (
         w: canvasElement.width / 18,
         h: canvasElement.height / 9,
     };
-    const tilesetPng = document.getElementById(scene.spriteSheet);
+    const backgroundTileMapPng = document.getElementById(scene.spriteSheet);
     if (!skipBackground) {
         scene.backgroundTiles.forEach((column, columnNumber) => {
             // columnNumber is the "X" coordinate
             column.forEach((tileName, rowNumber) => {
                 // rowNumber is the "Y" coordinate
                 if (Boolean(tileName)) {
-                    let backgroundTileSprite = tileSet.frames[tileName]?.frame;
+                    let backgroundTileSprite =
+                        backgroundTileMap.frames[tileName]?.frame;
                     let { gridX, gridY, gridW, gridH } = {
                         gridX: columnNumber * tileSize.w,
                         gridY: rowNumber * tileSize.h,
@@ -31,7 +32,7 @@ export const renderSceneTiles = (
                         h: sourceH,
                     } = backgroundTileSprite || {};
                     context.drawImage(
-                        tilesetPng,
+                        backgroundTileMapPng,
                         sourceX,
                         sourceY,
                         sourceW,
@@ -52,7 +53,8 @@ export const renderSceneTiles = (
             column.forEach((tileName, rowNumber) => {
                 // rowNumber is the "Y" coordinate
                 if (Boolean(tileName)) {
-                    let foregroundTileSprite = tileSet.frames[tileName]?.frame;
+                    let foregroundTileSprite =
+                        backgroundTileMap.frames[tileName]?.frame;
                     let { gridX, gridY, gridW, gridH } = {
                         gridX: columnNumber * tileSize.w,
                         gridY: rowNumber * tileSize.h,
@@ -66,7 +68,7 @@ export const renderSceneTiles = (
                         h: sourceH,
                     } = foregroundTileSprite || {};
                     context.drawImage(
-                        tilesetPng,
+                        backgroundTileMapPng,
                         sourceX,
                         sourceY,
                         sourceW,
