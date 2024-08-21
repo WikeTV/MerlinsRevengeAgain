@@ -1,4 +1,4 @@
-import unitSprites from "/src/spriteDefinitions/units.js";
+import unitSprites from "../../spriteDefinitions/units.js";
 import { createNpc, useNpcAI } from "./createNpc.js";
 import {
     createProjectile,

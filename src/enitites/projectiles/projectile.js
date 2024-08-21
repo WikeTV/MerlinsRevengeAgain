@@ -1,4 +1,4 @@
-import unitSprites from "/src/spriteDefinitions/units.js";
+import unitSprites from "../../spriteDefinitions/units.js";
 import { createEntity, getHitboxBounds, teams } from "../entity.js";
 import { getVector, immutableCopy } from "../../utils/helper.js";
 import { ANIMATION_SLIDES_PER_FRAME } from "../../utils/constants.js";

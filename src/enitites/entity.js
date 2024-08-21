@@ -15,7 +15,7 @@ import {
     generateUUID,
     immutableCopy,
 } from "../utils/helper.js";
-import unitSprites from "/src/spriteDefinitions/units.js";
+import unitSprites from "../spriteDefinitions/units.js";
 import { Vector2D } from "../utils/Vector2D.js";
 
 /**

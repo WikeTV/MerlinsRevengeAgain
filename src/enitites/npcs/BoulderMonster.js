@@ -1,5 +1,5 @@
 import { createNpc } from "./createNpc.js";
-import unitSprites from "/src/spriteDefinitions/units.js";
+import unitSprites from "../../spriteDefinitions/units.js";
 
 const boulderMonster = (initialValues) => {
     const { update: baseUpdate } = initialValues;

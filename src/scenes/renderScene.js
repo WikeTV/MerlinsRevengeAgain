@@ -1,4 +1,4 @@
-import tileSet from "/src/spriteDefinitions/background.js";
+import tileSet from "../spriteDefinitions/background.js";
 
 export const renderSceneTiles = (
     canvasElement,

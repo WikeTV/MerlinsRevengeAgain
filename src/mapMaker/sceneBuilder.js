@@ -9,7 +9,7 @@ import {
     getEntitiesForSaving,
 } from "../enitites/entityManager.js";
 import { entityTypes, createEntityOfType } from "../enitites/entityFactory.js";
-import tileSprites from "/src/spriteDefinitions/background.js";
+import tileSprites from "../spriteDefinitions/background.js";
 import { getSceneManager } from "../scenes/sceneManager.js";
 import {
     createCustomizedElement,

@@ -1,4 +1,4 @@
-import unitSprites from "/src/spriteDefinitions/units.js";
+import unitSprites from "../../spriteDefinitions/units.js";
 import { immutableCopy } from "../../utils/helper.js";
 import { createMagicBlast } from "../projectiles/magic/magicBlast.js";
 import { emitMagicThrow } from "../../events/onMagicThrow.js";
