@@ -6,7 +6,7 @@ export const renderSceneTiles = (
     scene,
     { skipBackground, skipForeground, drawGridLines } = {}
 ) => {
-    let tileSize = {
+    const tileSize = {
         w: canvasElement.width / 18,
         h: canvasElement.height / 9,
     };
@@ -17,9 +17,9 @@ export const renderSceneTiles = (
             column.forEach((tileName, rowNumber) => {
                 // rowNumber is the "Y" coordinate
                 if (Boolean(tileName)) {
-                    let backgroundTileSprite =
+                    const backgroundTileSprite =
                         backgroundTileMap.frames[tileName]?.frame;
-                    let { gridX, gridY, gridW, gridH } = {
+                    const { gridX, gridY, gridW, gridH } = {
                         gridX: columnNumber * tileSize.w,
                         gridY: rowNumber * tileSize.h,
                         gridW: tileSize.w,
