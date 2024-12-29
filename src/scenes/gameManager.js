@@ -71,6 +71,8 @@ const gameModes = {
                 })
                 .loadMap("maps/mr1.json");
 
+            sceneManager.drawTransitionArrows();
+
             // Initialize entity manager
             const entityManager = getEntityManager({
                 entityCanvas: gameState.entityCanvasElement,
@@ -88,8 +90,12 @@ const gameModes = {
         // Callback function to render current map and entities to screen
         animate: async (
             gameState,
-            { entityManager, inputManager, frameRateManager }
+            { entityManager, inputManager, frameRateManager, sceneManager }
         ) => {
+            // Scene transition arrows
+            if(gameState.canTransition) {
+                sceneManager?.drawTransitionArrows();
+            }
             // Entities
             entityManager.clearScreen().drawEntities({
                 entities: entityManager.entities,
@@ -146,6 +152,16 @@ const gameModes = {
             const currentPressedInputs = inputManager.getPressedInputs();
             const currentInputActions =
                 inputManager.getActivatedActions();
+
+            //? This is a little naughty. We update the state and attempt to render to the screen
+            if (
+                !lastState.canTransition &&
+                gameManagers?.entityManager?.entities?.filter(
+                    (ent) => !ent.isDead && ent.team !== "blue"
+                ).length === 0
+            ) {
+                nextGameState.canTransition = true;
+            }
 
             // Pause and unpause the game when "Escape" is pressed
             if (

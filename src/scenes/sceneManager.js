@@ -2,6 +2,7 @@ import { renderSceneTiles } from "./renderScene.js";
 import { rescaleElement } from "../utils/scaling.js";
 import { publicJSONFileLoader } from "../utils/fileFetcher.js";
 import { immutableCopy } from "../utils/helper.js";
+import { drawSceneTransitionBoundaries } from "./transitionHandler.js";
 
 export const getSceneManager = ({ tileDisplayCanvasElement }) => {
     const sceneManagerState = {
@@ -94,6 +95,27 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
         }
         sceneManagerState.currentScene = newScene;
         return immutableCopy(sceneManagerState);
+    };
+
+    sceneManagerState.drawTransitionArrows = () => {
+        let sceneColumnIndex = 0;
+        let sceneRowIndex = 0;
+        sceneManagerState.map.scenes.forEach((sceneColumn, colIndex) =>
+            sceneColumn.forEach((scene, rowIndex) => {
+                if (scene.name === sceneManagerState.currentScene.name) {
+                    sceneColumnIndex = colIndex;
+                    sceneRowIndex = rowIndex;
+                }
+            })
+        );
+
+        drawSceneTransitionBoundaries({
+            map: sceneManagerState.map,
+            sceneRowIndex,
+            sceneColumnIndex,
+            canvasElement: sceneManagerState.canvas,
+            context: sceneManagerState.ctx,
+        });
     };
 
     sceneManagerState.getScene = () => sceneManagerState.currentScene;

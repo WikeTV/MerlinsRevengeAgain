@@ -165,7 +165,8 @@ export const stringifyFunctionNames = (input = {}) => {
         typeof input === "string"
     ) {
         return input;
-    } else if (input.length !== undefined) { // Array should return an array
+    } else if (input.length !== undefined) {
+        // Array should return an array
         output = input.map((value) => {
             if (typeof value !== "object") {
                 return value;
@@ -173,7 +174,8 @@ export const stringifyFunctionNames = (input = {}) => {
                 return stringifyFunctionNames(value);
             }
         });
-    } else { // Objects should be all that's left
+    } else {
+        // Objects should be all that's left
         Object.entries(input).forEach(([key, value]) => {
             if (typeof value !== "object") {
                 output[key] = value;
@@ -190,4 +192,15 @@ export const deepToString = (input = {}) => {
     let output = stringifyFunctionNames(input);
 
     return JSON.stringify(output, undefined, 2);
+};
+
+export const oppositeDirectionLookup = {
+    up: "down",
+    down: "up",
+    left: "right",
+    right: "left",
+    north: "south",
+    south: "north",
+    east: "west",
+    west: "east",
 };

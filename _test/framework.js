@@ -8,6 +8,9 @@ import "./sauce.test.js";
 import "./src/utils/Vector2D.test.js";
 import "./src/utils/textRender.test.js";
 
+// Scene renderers
+import "./src/scenes/transitionHandler.test.js";
+
 // Entities
 import "./src/entities/entity.test.js";
 
