@@ -231,6 +231,7 @@ export const drawSceneTransitionBoundaries = ({
             y: tile.y * tileSize.h,
         };
 
+        console.log({context})
         // Draw transition arrow within tile
         context.drawImage(
             backgroundTileMapPng,

@@ -8,7 +8,7 @@ describe("getSceneTransitionBoundaryTiles", () => {
 
     it(`scene index: [${scene?.col}, ${scene?.row}]`, () => {
         const canvas = sauce.createElement("canvas");
-        const context = canvas.getContext("2D");
+        const context = canvas.getContext("2d");
     });
 
     it("return correct tiles", () => {

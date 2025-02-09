@@ -105,18 +105,22 @@ var sauce = {
 
 // Each group of tests for a particular function should be part of the same describe
 var describe = (suiteName, suiteFunc) => {
+    if(typeof suiteFunc !== "function") {
+        throw new Error("Error: " + suiteName + " missing test function");
+    }
     suites.push({ describe: suiteName, testList: [] });
+    // Running describe's second parameter should invoke all of the "it" tests for that component
     suiteFunc();
 };
 
-// Before each "it" in a test suite, run this funtion and pass
-// the output as a parameter when calling "it"
+// Before each "it" in a test suite, this function will run, and pass
+// its output as a parameter that the "it" function can access.
 var beforeEach = (initFunc) => {
     suites[suites.length - 1].beforeEach = initFunc;
 };
 
-// Each individual test should account for exactly 1 functionality requirement
-//     For example, testing "array.push" would have one "it" for: "it adds an item to the array", and
+// Each individual test should ideally account for exactly 1 functionality requirement
+//     For example, testing "array.push" should have one "it" for: "it adds an item to the array", and
 //     a second one for: "it returns a reference to the same array"
 var it = async (testName, testFunc) => {
     // Each describe will be loaded one-at-a-time
