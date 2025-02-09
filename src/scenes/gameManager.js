@@ -69,7 +69,7 @@ const gameModes = {
                     scalingMultiplier: gameState.scalingMultiplier,
                     style: overlappingCanvasDisplayStyle,
                 })
-                .loadMap("maps/mr1.json");
+                .loadMap("maps/test-map.json");
 
             sceneManager.drawTransitionArrows();
 

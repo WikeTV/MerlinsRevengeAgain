@@ -1,5 +1,6 @@
 // Currently have to load all test files individually here.
-// This file gets loaded into the webpage automatically, and any files imported here will be loaded (usually in order) after `sauce.js`
+// This file gets loaded into the webpage automatically, and any files
+// imported here will be loaded and executed (usually in order) after `sauce.js`
 
 // Testing the tests
 import "./sauce.test.js";
@@ -21,7 +22,7 @@ import "./src/entities/projectiles/projectile.test.js";
 import "./src/entities/projectiles/magic/magicBlast.test.js";
 
 // Attempt to fetch all files in /src/ directory from the LiveServer host
-//! Current Status: FAILURE
+//! This may never work
 
 const getLinksInUrl = (url) => {
     return new Promise((resolve) => {
