@@ -17,14 +17,50 @@ const directionAngles = {
 };
 
 const arrowSprites = {
-    green: JSON.parse(
-        JSON.stringify(
-            backgroundTileMap.frames["episode_one/arrow_green_up.tif"]
-        )
-    ),
-    red: JSON.parse(
-        JSON.stringify(backgroundTileMap.frames["episode_one/arrow_red_up.tif"])
-    ),
+    green: {
+        up: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_green_up.tif"]
+            )
+        ),
+        down: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_green_down.tif"]
+            )
+        ),
+        right: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_green.tif"]
+            )
+        ),
+        left: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_green_left.tif"]
+            )
+        ),
+    },
+    red: {
+        up: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_red_up.tif"]
+            )
+        ),
+        down: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_red_down.tif"]
+            )
+        ),
+        right: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_red.tif"]
+            )
+        ),
+        left: JSON.parse(
+            JSON.stringify(
+                backgroundTileMap.frames["episode_one/arrow_red_left.tif"]
+            )
+        ),
+    },
 };
 
 /**
@@ -64,10 +100,10 @@ export const getTileIndices = (
     } else if (edgeDirection === "right") {
         tileX = tileMatrix.length - 1;
         tileY = tileIndexInEdgeArray;
-    } else if (edgeDirection === "up") {
+    } else if (edgeDirection === "down") {
         tileX = tileIndexInEdgeArray;
         tileY = tileMatrix[0].length - 1;
-    } else if (edgeDirection === "down") {
+    } else if (edgeDirection === "up") {
         tileX = tileIndexInEdgeArray;
         tileY = 0;
     }
@@ -217,22 +253,47 @@ export const drawSceneTransitionBoundaries = ({
         sceneColumnIndex,
     });
 
+    /**
+        {
+            frame: { x: 1565, y: 239, w: 16, h: 16 },
+            rotated: false,
+            trimmed: false,
+            spriteSourceSize: { x: 0, y: 0, w: 16, h: 16 },
+            sourceSize: { w: 16, h: 16 },
+        }
+     */
+
     tilesToDrawOn.forEach((tile) => {
-        // Get center of tile
+        let translation = { x: 0, y: 0 };
+        // Adjust drawing position based on arrow direction
+        if (tile.direction === "up") {
+            translation.y = 0;
+            translation.x = -4 * scalingMultiplier;
+        } else if (tile.direction === "down") {
+            translation.y = 20 * scalingMultiplier;
+            translation.x = -4 * scalingMultiplier;
+        } else if (tile.direction === "left") {
+            translation.x = 0;
+            translation.y = -4 * scalingMultiplier;
+        } else if (tile.direction === "right") {
+            translation.x = 20 * scalingMultiplier;
+            translation.y = -4 * scalingMultiplier;
+        }
+
         const {
             x: sourceX,
             y: sourceY,
             w: sourceW,
             h: sourceH,
-        } = arrowSprites[tile.color];
+        } = arrowSprites[tile.color][tile.direction].frame;
 
+        // Get center of tile
         const drawCoordinates = {
-            x: tile.x * tileSize.w,
-            y: tile.y * tileSize.h,
+            x: tile.x * tileSize.w + translation.x,
+            y: tile.y * tileSize.h + translation.y,
         };
 
-        console.log({context})
-        // Draw transition arrow within tile
+        // Draw 2 transition arrows within tile, side by side
         context.drawImage(
             backgroundTileMapPng,
             sourceX,
@@ -244,88 +305,30 @@ export const drawSceneTransitionBoundaries = ({
             sourceW * scalingMultiplier,
             sourceH * scalingMultiplier
         );
+        context.drawImage(
+            backgroundTileMapPng,
+            sourceX,
+            sourceY,
+            sourceW,
+            sourceH,
+            drawCoordinates.x + (["up", "down"].includes(tile.direction) ? 12 : 0) * scalingMultiplier,
+            drawCoordinates.y + (["left", "right"].includes(tile.direction) ? 12 : 0) * scalingMultiplier,
+            sourceW * scalingMultiplier,
+            sourceH * scalingMultiplier
+        );
+        context.drawImage(
+            backgroundTileMapPng,
+            sourceX,
+            sourceY,
+            sourceW,
+            sourceH,
+            drawCoordinates.x + (["up", "down"].includes(tile.direction) ? 24 : 0) * scalingMultiplier,
+            drawCoordinates.y + (["left", "right"].includes(tile.direction) ? 24 : 0) * scalingMultiplier,
+            sourceW * scalingMultiplier,
+            sourceH * scalingMultiplier
+        );
 
-        //TODO: draw a couple arrows for each tile
         //TODO: ensure tiles are edge-aligned
 
-        // //! Entity draw function (WIP)
-        // const currentFrame =
-        //     currentAnimationStateObject.animationFrames[
-        //         Math.floor(this.frameCount ?? 0)
-        //     ];
-        // const { x: sx, y: sy, w: sw, h: sh } = currentFrame.frame;
-        // let scaledX = this.x * scalingMultiplier;
-        // let scaledY = this.y * scalingMultiplier;
-        // let spriteWidth = (this?.baseWidth ?? sw) * scalingMultiplier;
-        // let spriteHeight = (this.baseHeight ?? sh) * scalingMultiplier;
-
-        // context.save();
-
-        // // Hitbox visualization
-        // if (showHitbox) {
-        //     context.strokeStyle = "red";
-        //     context.strokeRect(
-        //         scaledX - spriteWidth / 2,
-        //         scaledY - spriteHeight / 2,
-        //         spriteWidth,
-        //         spriteHeight
-        //     );
-        //     context.strokeStyle = "black";
-        // }
-
-        // // Apply visual modifiers
-        // context.globalAlpha = this.visualModifiers.opacity;
-
-        // // Center context on sprite in spritesheet
-        // context.translate(scaledX, scaledY);
-
-        // // Apply sprite rotation
-        // context.rotate(((this.rotation ?? 0) * Math.PI) / 180);
-
-        // // Apply horizontal flip
-        // if (this.reverseImage) {
-        //     context.scale(-1, 1);
-        // }
-        // if (currentAnimationStateObject.isReversed) {
-        //     context.scale(-1, 1);
-        // }
-
-        // // Source image coordinates
-        // const source = [sx, sy, sw, sh];
-
-        // // Start coordinates and size dimensions of image destination on canvas
-        // // Apply image stretching here
-        // const destination = [
-        //     ((this.reverseImage ? spriteWidth : -1 * spriteWidth) *
-        //         this.visualModifiers.stretchX) /
-        //         2,
-        //     (-1 * spriteHeight * this.visualModifiers.stretchY) / 2,
-        //     (this.reverseImage ? -1 * spriteWidth : spriteWidth) *
-        //         this.visualModifiers.stretchX,
-        //     spriteHeight * this.visualModifiers.stretchY,
-        // ];
-
-        // // Render sprite to canvas
-        // // image element, spriteLocationX, spriteLocationY, spriteWidth, spriteHeight, canvasPositionX, canvasPositionY, drawWidth, drawHeight
-        // context.drawImage(this.spriteSheet, ...source, ...destination);
-
-        // // if (
-        // //     Math.floor(this.frameCount) <
-        // //     currentAnimationStateObject.animationFrames.length - 1
-        // // ) {
-        // //     this.frameCount +=
-        // //         currentAnimationStateObject.animationSpeed ?? 0.2; // Default animation speed will be 5 frames per image
-        // // } else {
-        // //     this.frameCount = 0;
-        // //     if (currentAnimationStateObject?.onFinish) {
-        // //         currentAnimationStateObject.onFinish(this);
-        // //     }
-        // //     if (currentAnimationStateObject?.noLoop) {
-        // //         this.animationTimer = 0;
-        // //         this.currentAnimationState =
-        // //             currentAnimationStateObject?.noLoop;
-        // //     }
-        // // }
-        // context.restore();
     });
 };

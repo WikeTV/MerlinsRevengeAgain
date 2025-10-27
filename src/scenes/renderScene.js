@@ -37,7 +37,7 @@ export const renderSceneTiles = (
                         sourceY,
                         sourceW,
                         sourceH,
-                        // 1% size increase to fill any gaps that may be present due to imperfect scaling atrifacts
+                        // 2% size increase to fill any gaps that may be present due to imperfect scaling artifacts
                         gridX - gridW * 0.01,
                         gridY - gridH * 0.01,
                         gridW + gridW * 0.02,

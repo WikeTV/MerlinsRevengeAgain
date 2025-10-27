@@ -2,6 +2,7 @@ import { getCutsceneManager } from "./cutscenes/cutsceneManager.js";
 import { createButton, createInputField } from "./mapMaker/htmlHelpers.js";
 import { legacyCutsceneFetcher } from "./utils/fileFetcher.js";
 
+// Current: Cutscene playback test
 window.addEventListener("load", async () => {
     let inputValue = "wasted";
     const mainDiv = document.getElementById("main");

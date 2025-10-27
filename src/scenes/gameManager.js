@@ -20,7 +20,8 @@ const overlappingCanvasDisplayStyle = {
 };
 
 const GAME_STATE = {
-    isDevMode: false,
+    isDebugMode: false,
+    canDebug: false,
     gameMode: "coreGameplay",
     isPaused: false,
     scalingMultiplier: calculateSceneScalingMultiplier(
@@ -92,20 +93,21 @@ const gameModes = {
             gameState,
             { entityManager, inputManager, frameRateManager, sceneManager }
         ) => {
-            // Scene transition arrows
-            if(gameState.canTransition) {
-                sceneManager?.drawTransitionArrows();
-            }
             // Entities
             entityManager.clearScreen().drawEntities({
                 entities: entityManager.entities,
                 ctx: entityManager.ctx,
                 scalingMultiplier: gameState.scalingMultiplier,
-                showHitbox: gameState.isDevMode,
+                showHitbox: gameState.isDebugMode, //? DEBUG: show entity hitboxes
             });
 
-            // //? DEV: status text to show various current game state values
-            if (gameState.isDevMode) {
+            // Scene transition arrows
+            if(gameState.canTransition) {
+                sceneManager?.drawTransitionArrows();
+            }
+
+            // //? DEBUG: status text to show various current game state values
+            if (gameState.isDebugMode) {
                 const currentPressedInputs = inputManager.getPressedInputs();
                 const currentInputActions =
                     inputManager.getActivatedActions().actions;
@@ -133,6 +135,11 @@ const gameModes = {
                     "Player HP: " + (player ? player.currentHP : "DEAD"),
                     4
                 );
+                drawStatusText(
+                    ctx,
+                    "Transition Active: " + (gameState.canTransition ? "True" : "False"),
+                    5
+                );
             }
         },
         // Callback function to handle updating the game state each frame
@@ -153,14 +160,26 @@ const gameModes = {
             const currentInputActions =
                 inputManager.getActivatedActions();
 
-            //? This is a little naughty. We update the state and attempt to render to the screen
+            //? Check if all enemies in scene are dead, and if so, allow transition to neighboring scenes
             if (
                 !lastState.canTransition &&
-                gameManagers?.entityManager?.entities?.filter(
-                    (ent) => !ent.isDead && ent.team !== "blue"
-                ).length === 0
+                gameManagers?.entityManager?.entities?.some(
+                    (ent) => !ent.isDead || ent.team !== "blue"
+                )
             ) {
                 nextGameState.canTransition = true;
+            }
+
+            // Check if DEBUG info can and should be toggled
+            if (
+                currentPressedInputs.includes("KeyI") && currentGameState.canDebug
+            ) {
+                nextGameManagers.inputManager.acknowledgeInput("KeyI");
+                nextGameState.isDebugMode = !currentGameState.isDebugMode;
+                console.log(
+                    "Debug mode " +
+                        (nextGameState.isDebugMode ? "enabled" : "disabled")
+                );
             }
 
             // Pause and unpause the game when "Escape" is pressed
@@ -174,13 +193,18 @@ const gameModes = {
                     nextGameState.isPaused = false;
                 } else {
                     console.log("Pause");
+                    console.log({nextGameState})
                     nextGameState.isPaused = true;
                 }
             }
+
+            // Paused game loops here, to prevent state updates from being saved, while
+            // still allowing user interaction with pause menu, and update of DEBUG info.
             if (nextGameState.isPaused) {
+                //TODO: render "Paused" overlay text
                 return { nextGameState, nextGameManagers };
             } else {
-                //! While game is paused, the below code will NOT execute
+                //! Below code will only execute when the game is unpaused
 
                 // Run individual entity logic on each loop
                 nextGameManagers.entityManager = entityManager
@@ -199,6 +223,7 @@ const gameModes = {
 
                 nextGameManagers.eventManager.removeAcknowledgedEvents();
 
+                //! TEMP
                 // When player dies, play the "wasted" cutscene, then restart the game
                 const player = entityManager.entities.find(
                     (ent) => ent.name === "merlin"
@@ -286,8 +311,14 @@ const gameModes = {
     },
 };
 
+/**
+ * Initializes and returns the main game manager, which handles the main game loop and state.
+ * @param {Object} options - Configuration options for the game manager.
+ * @param {boolean} options.canDebug - Whether debug mode can be enabled via keybind.
+ * @returns {Object} The game manager with the main loop function.
+ */
 export const getGameManager = async (options = {}) => {
-    initialGameState.isDevMode = Boolean(options.isDevMode);
+    initialGameState.canDebug = Boolean(options.canDebug);
 
     // Remove loading placeholder
     initialGameState.loadingHeading.style.display = "none";
@@ -336,7 +367,7 @@ export const getGameManager = async (options = {}) => {
             Object.assign(nextGameManagers, newGameModeManagers);
         }
 
-        // Handle viewport resize
+        // Handle viewport resize (using 2% threshold to avoid excessive resizing)
         // if container size has increased by more than 2%, increase canvas size
         // if container size has decreased below canvas size, decrease canvas size to 98% of container width
         //      - this protects against the container being slightly too small for the game display
