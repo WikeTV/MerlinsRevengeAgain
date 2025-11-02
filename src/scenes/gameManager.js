@@ -14,6 +14,7 @@ import {
 } from "../utils/constants.js";
 import { getEventManager } from "../events/eventManager.js";
 import { getCutsceneManager } from "../cutscenes/cutsceneManager.js";
+import { handleSceneTransition } from "./transitionHandler.js";
 
 const overlappingCanvasDisplayStyle = {
     display: "block",
@@ -70,9 +71,7 @@ const gameModes = {
                     scalingMultiplier: gameState.scalingMultiplier,
                     style: overlappingCanvasDisplayStyle,
                 })
-                .loadMap("maps/test-map.json");
-
-            sceneManager.drawTransitionArrows();
+                .loadMap("maps/mr1.json");
 
             // Initialize entity manager
             const entityManager = getEntityManager({
@@ -163,8 +162,8 @@ const gameModes = {
             //? Check if all enemies in scene are dead, and if so, allow transition to neighboring scenes
             if (
                 !lastState.canTransition &&
-                gameManagers?.entityManager?.entities?.some(
-                    (ent) => !ent.isDead || ent.team !== "blue"
+                !gameManagers?.entityManager?.entities?.some(
+                    (ent) => ent.team !== "blue" && !ent.isDead
                 )
             ) {
                 nextGameState.canTransition = true;
@@ -236,6 +235,13 @@ const gameModes = {
                     nextGameState.gameMode = "cutscene";
                     nextGameState.cutsceneName = "wasted";
                 }
+
+                // // Check for scene transition
+                // if (gameState.canTransition && nextGameState.gameMode && checkPlayerIsAtSceneEdge({ player})) {
+                //     const { sceneToLoad } = handleSceneTransition({
+
+                //     });
+                // }
 
                 //! DEV debug
                 if (

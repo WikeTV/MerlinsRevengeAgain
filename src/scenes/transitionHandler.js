@@ -332,3 +332,17 @@ export const drawSceneTransitionBoundaries = ({
 
     });
 };
+
+export const handleSceneTransition = ({
+    map,
+    sceneRowIndex,
+    sceneColumnIndex,
+    canvasElement,
+    context,
+    gameState,
+}) => {
+    const newGameState = { ...gameState };
+
+
+    return newGameState;
+}
