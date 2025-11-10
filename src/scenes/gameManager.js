@@ -205,6 +205,7 @@ const gameModes = {
             }
 
             if (lastState.canTransition && !lastState.isTransitionArrowsDrawn) {
+                //! This seems to always draw the arrows for the starting scene... need to track down why
                 nextGameManagers.sceneManager.drawTransitionArrows();
                 nextGameState.isTransitionArrowsDrawn = true;
             }
