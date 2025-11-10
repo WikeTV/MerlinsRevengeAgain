@@ -1,6 +1,12 @@
 import { createNpc, useNpcAI } from "./createNpc.js";
 import { unitTileMap } from "../../spriteDefinitions/units.js";
 import { defaultRecoilStateUpdate } from "../entity.js";
+import {
+    createProjectile,
+    detectProjectileHitEntity,
+} from "../projectiles/projectile.js";
+import { immutableCopy } from "../../utils/helper.js";
+import { emitEntitySpawn } from "../../events/onEntitySpawn.js";
 
 const createBoulderMonsterProjectile = ({
     x,
@@ -53,7 +59,7 @@ const createBoulderMonsterProjectile = ({
                             currentEntityState,
                         });
                     Object.assign(nextEntityState, newCoordinates, {
-                        rotation: 0,
+                        rotation: newRotation,
                     });
 
                     // End of flight, biff into the ground
@@ -64,6 +70,7 @@ const createBoulderMonsterProjectile = ({
                                 frameCount: 0,
                                 z: -1,
                                 currentState: "terminal",
+                                rotation: 0,
                             },
                             currentEntityState.targetCoordinate
                         );
@@ -96,22 +103,20 @@ const boulderMonsterRecoilStateUpdate = ({ currentEntityState, scene }) => {
     return defaultRecoilStateUpdate({
         currentEntityState,
         scene,
-        knockbackMultiplier: 0.05,
+        knockbackMultiplier: 0.1,
     });
 };
 
 const ENTITY_TYPE = "BoulderMonster";
 
 export const BoulderMonster = (initialValues) => {
-    const updateBoulderMonsterState = (...props) => {
-        useNpcAI(ENTITY_TYPE)(...props);
-    };
+    const updateBoulderMonsterState = useNpcAI(ENTITY_TYPE);
     const boulderMonsterInitialState = createNpc({
         team: "green",
         type: ENTITY_TYPE,
         baseWidth: 45,
         baseHeight: 45,
-        attackRange: 200,
+        attackRange: 300,
         spriteSheet: document.getElementById("character-sprites"),
         states: {
             idle: {
@@ -134,7 +139,8 @@ export const BoulderMonster = (initialValues) => {
                 animationFrames: Array.from(unitTileMap.animations["Bmfi"]).map(
                     (frameName) => ({ ...unitTileMap.frames[frameName] })
                 ),
-                onFinish: ({ currentEntityState }) => {
+                executeOnFrame: 90, // Animation sprite 20, but all sprites are held for 5 frames
+                onFrameReached: ({ currentEntityState }) => {
                     console.log("huuuuh");
                     // When Boulder Monster finishes the "attacking" animation, it should fire an arrow at its target
 
@@ -149,16 +155,24 @@ export const BoulderMonster = (initialValues) => {
                         targetCoordinate: nextEntityState.targetCoordinate,
                     });
 
-                    // Reset Boulder Monster state to "idle" so that it can begin the search/attack cycle again
-                    nextEntityState.currentState = "idle";
-                    nextEntityState.frameCount = 0;
-                    nextEntityState.animationTimer = 0;
-
                     // Use eventManager bus to spawn in the newly created arrow projectile
                     emitEntitySpawn({
                         targetEntity: newRockProjectile,
                         sourceEntity: nextEntityState,
                     });
+                    return nextEntityState;
+                },
+                // Kinda do nothing on finish, since the projectile launch is handled halfway through the animation
+                onFinish: ({ currentEntityState }) => {
+                    const nextEntityState = Object.assign(
+                        {},
+                        currentEntityState
+                    );
+                    // After attacking, allow AI to check if player is still in range
+                    nextEntityState.currentState = "walking";
+                    nextEntityState.frameCount = 0;
+                    nextEntityState.animationTimer = 0;
+
                     return nextEntityState;
                 },
                 updateState: updateBoulderMonsterState,
@@ -169,7 +183,7 @@ export const BoulderMonster = (initialValues) => {
                 ],
             },
         },
-        currentAnimationState: "idle",
+        currentState: "idle",
         ...(initialValues || initialValues),
     });
     return boulderMonsterInitialState;

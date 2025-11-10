@@ -65,6 +65,7 @@ const createGoblinArrow = ({ x, y, team, targetCoordinate } = {}) => {
                                 frameCount: 0,
                                 z: -1,
                                 currentState: "terminal",
+                                rotation: 0,
                             },
                             currentEntityState.targetCoordinate
                         );
@@ -73,7 +74,7 @@ const createGoblinArrow = ({ x, y, team, targetCoordinate } = {}) => {
                 },
             },
             terminal: {
-                // Don't stay in the ground forever. Maybe 10 frames (1 sec)?
+                // Don't stay in the ground forever. Maybe 5 frames (1 sec)?
                 animationFrames: Array.from(new Array(5)).map(
                     () => unitTileMap.frames["gobarrowingrass.tif"]
                 ),

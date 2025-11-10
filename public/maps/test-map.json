@@ -1224,14 +1224,20 @@
                         "spriteSheetId": "character-sprites"
                     },
                     {
-                        "baseWidth": 45,
-                        "baseHeight": 45,
-                        "attackRange": 200,
-                        "currentAnimationState": "idle",
                         "type": "BoulderMonster",
                         "team": "green",
                         "x": 88.52094901564867,
                         "y": 57.50630994447249,
+                        "frameCount": 0,
+                        "spriteSheetId": "character-sprites"
+                    },
+                    {
+                        "type": "GoblinArcher",
+                        "team": "green",
+                        "baseWidth": 16,
+                        "baseHeight": 16,
+                        "x": 146.673397274104,
+                        "y": 190.6108026249369,
                         "frameCount": 0,
                         "spriteSheetId": "character-sprites"
                     }

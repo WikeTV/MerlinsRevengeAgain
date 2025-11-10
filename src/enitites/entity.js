@@ -362,11 +362,20 @@ const DEFAULT_ENTITY = Object.freeze({
             currentEntityState.states["idle"] ??
             Object.values(currentEntityState.states)?.[0] ??
             null;
+
         const updateStateReturnValue =
             currentStateObject?.updateState?.({
                 currentEntityState,
                 ...params,
             }) ?? currentEntityState;
+
+        if (
+            currentStateObject.executeOnFrame != null &&
+            currentStateObject.executeOnFrame ===
+                currentEntityState.animationTimer
+        ) {
+            currentStateObject.onFrameReached?.({ currentEntityState });
+        }
 
         let newEntityAndSpawn = convertToArray(updateStateReturnValue);
 
