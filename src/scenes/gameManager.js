@@ -80,7 +80,7 @@ const gameModes = {
                     scalingMultiplier: gameState.scalingMultiplier,
                     style: overlappingCanvasDisplayStyle,
                 })
-                .loadMap("maps/mr1.json");
+                .loadMap("maps/test-map.json");
 
             // Initialize entity manager
             const entityManager = getEntityManager({
@@ -350,11 +350,7 @@ const gameModes = {
                 const player = entityManager.entities.find(
                     (ent) => ent.name === "merlin"
                 );
-                if (
-                    nextGameManagers?.entityManager?.entities?.length !==
-                        undefined &&
-                    !player
-                ) {
+                if (player && player.isDead) {
                     nextGameState.gameMode = "cutscene";
                     nextGameState.cutsceneName = "wasted";
                 }

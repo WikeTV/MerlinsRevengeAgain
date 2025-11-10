@@ -79,12 +79,7 @@ const updateEntities = ({
     newEntitiesArray.sort((a, b) => (a.z > b.z ? 1 : -1)); // Make certain entities have draw priority
 
     return Object.assign({}, entityManagerState, {
-        entities: newEntitiesArray.filter(
-            (entity) => !entity.shouldDespawn && !entity.isDead
-        ),
-        entityGraves: newEntitiesArray.filter(
-            (entity) => !entity.shouldDespawn && !entity.isDead
-        ),
+        entities: newEntitiesArray.filter((entity) => !entity.shouldDespawn),
     });
 };
 
@@ -195,6 +190,12 @@ export const getEntityManager = ({ entityCanvas, scene }) => {
                     if (event.sideEffects) {
                         nextEntityArrayState = event.sideEffects.reduce(
                             (sideEffectEntities, effect) => {
+                                console.log({
+                                    allCurrentEntityEvents,
+                                    entityArrayState,
+                                    sideEffectEntities,
+                                    effect,
+                                });
                                 const {
                                     targetEntity,
                                     sourceEntity,

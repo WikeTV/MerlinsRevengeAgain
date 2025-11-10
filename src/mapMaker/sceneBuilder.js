@@ -140,8 +140,9 @@ export const getSceneBuilder = (options = {}) => {
     // Initialize map preview and scene entity placer
     let sceneManager = getSceneManager({
         tileDisplayCanvasElement: tilePreviewCanvas,
-    });
-    let scene = sceneManager.initializeEmptyScene().currentScene;
+    }).initializeEmptyScene();
+
+    let scene = sceneManager.currentScene;
 
     let sceneEntityManager = getEntityManager({
         entityCanvas: entityPreviewCanvas,
@@ -387,20 +388,23 @@ export const getSceneBuilder = (options = {}) => {
         onSceneSelect: (newScene, event) => {
             // Load scene from map when a scene is selected
             if (newScene.name === "") {
-                scene = sceneManager.initializeEmptyScene().currentScene;
+                sceneManager = sceneManager.initializeEmptyScene();
+                scene = sceneManager.currentScene;
                 sceneEntityManager = getEntityManager({
                     entityCanvas: entityPreviewCanvas,
                 });
                 sceneName = undefined;
                 document.getElementById("scene-name").value = "";
             } else {
-                scene = sceneManager.loadSceneFromJSON(
+                sceneManager = sceneManager.loadSceneFromJSON(
                     JSON.stringify(newScene)
-                ).currentScene;
+                );
+                scene = sceneManager.currentScene;
                 sceneEntityManager = getEntityManager({
                     entityCanvas: entityPreviewCanvas,
                     scene,
-                });
+                }).spawnSceneEntities();
+                console.log({ sceneEntityManager });
                 sceneName = scene.name;
                 document.getElementById("scene-name").value = scene.name;
             }

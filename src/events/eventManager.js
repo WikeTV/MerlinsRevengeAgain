@@ -29,7 +29,9 @@ export const getEventManager = (containerElement) => {
         },
         snapshotPendingEvents() {
             const newThis = this.removeAcknowledgedEvents();
-            return newThis.pendingQueue;
+            return Array.from(newThis.pendingQueue).sort(
+                (a, b) => a.createdAt - b.createdAt
+            );
         },
         acknowledgeEvent(eventId) {
             this.completedIds[eventId] = true;

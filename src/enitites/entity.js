@@ -337,7 +337,7 @@ const DEFAULT_ENTITY = Object.freeze({
         return velocityVector;
     },
     update: ({ currentEntityState, container, ...params }) => {
-        // Despawn self when HP reaches 0 (`null`, `undefined`, or negative numeric "currentHP" will not trigger a despawn)
+        // Change state to "dead" when HP reaches 0 (`null`, `undefined`, or negative numeric "currentHP" will not trigger a despawn)
         if (
             currentEntityState.currentState !== "recoil" &&
             currentEntityState.currentState !== "ghost" &&
@@ -346,7 +346,13 @@ const DEFAULT_ENTITY = Object.freeze({
             return [
                 immutableCopy(
                     Object.assign({}, currentEntityState, {
-                        shouldDespawn: true,
+                        // All of these things need to be set for an entity to die without issue
+                        //TODO: Annoying to reset the animation counter every time
+                        currentState: "dead",
+                        isDead: true,
+                        frameCount: 0,
+                        animationTimer: 0,
+                        z: -1000, // Ensure dead entities are rendered below all others
                     })
                 ),
             ];
@@ -457,15 +463,17 @@ export const getEntityCoreValues = (entity, otherFieldsToSave = []) => {
 
 // TODO: Move these constants to somewhere they make more sense
 const KNOCKBACK_MIN_STRENGTH = 0.05;
-const KNOCKBACK_MULTIPLIER = 0.3;
 const KNOCKBACK_DECAY_MULTIPLIER = 0.95;
 
-export const defaultRecoilStateUpdate = ({ currentEntityState, scene }) => {
+export const defaultRecoilStateUpdate = ({
+    currentEntityState,
+    scene,
+    knockbackMultiplier = 0.3,
+}) => {
     const nextEntityState = Object.assign({}, currentEntityState);
 
     const knockbackStrength =
-        currentEntityState.knockbackVector.getMagnitude() *
-        KNOCKBACK_MULTIPLIER;
+        currentEntityState.knockbackVector.getMagnitude() * knockbackMultiplier;
 
     // When knockback has subsided, return to "idle" state
     if (

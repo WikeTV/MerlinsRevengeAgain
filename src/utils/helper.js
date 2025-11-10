@@ -190,7 +190,7 @@ export const stringifyFunctionNames = (input = {}) => {
 export const deepToString = (input = {}) => {
     let output = stringifyFunctionNames(input);
 
-    return JSON.stringify(output, undefined, 2);
+    return JSON.stringify(output, undefined, 4); //TODO: no formatting for final map versions
 };
 
 export const oppositeDirectionLookup = {

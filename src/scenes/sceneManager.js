@@ -67,22 +67,17 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
             return immutableCopy(newSceneManagerState);
         },
         drawScene({ customCanvas, customContext, options } = {}) {
-            if (this.currentScene) {
-                (customContext ?? this.ctx).clearRect(
-                    0,
-                    0,
-                    (customCanvas ?? this.canvas).width,
-                    (customCanvas ?? this.canvas).height
-                );
+            const sceneManagerState = { ...this };
+            const ctx = customContext ?? sceneManagerState.ctx;
+            const canvas = customCanvas ?? sceneManagerState.canvas;
+
+            if (sceneManagerState.currentScene) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 renderSceneTiles(
-                    customCanvas ?? this.canvas,
-                    customContext ?? this.ctx,
-                    this.currentScene,
+                    canvas,
+                    ctx,
+                    sceneManagerState.currentScene,
                     options
-                );
-            } else {
-                throw new Error(
-                    "No sceneManagerState.currentScene loaded. Unable to render nothing."
                 );
             }
             return immutableCopy(sceneManagerState);

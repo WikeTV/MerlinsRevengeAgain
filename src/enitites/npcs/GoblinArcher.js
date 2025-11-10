@@ -92,7 +92,7 @@ const createGoblinArrow = ({ x, y, team, targetCoordinate } = {}) => {
     return createProjectile(goblinArrowInitalValues);
 };
 
-const ENTITY_TYPE = "goblinArcher";
+const ENTITY_TYPE = "GoblinArcher";
 const GoblinArcher = (initialValues) => {
     const goblinUpdateState = useNpcAI(ENTITY_TYPE);
     const goblinArcherObj = createNpc({
@@ -154,6 +154,9 @@ const GoblinArcher = (initialValues) => {
                     return nextEntityState;
                 },
                 updateState: goblinUpdateState,
+            },
+            dead: {
+                animationFrames: [{ ...unitTileMap.frames["gobgrave.tif"] }],
             },
         },
         currentState: "idle",
