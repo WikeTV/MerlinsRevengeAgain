@@ -360,6 +360,13 @@ const gameModes = {
                     nextGameState.cutsceneName = "wasted";
                 }
 
+                // // Check for scene transition
+                // if (gameState.canTransition && nextGameState.gameMode && checkPlayerIsAtSceneEdge({ player})) {
+                //     const { sceneToLoad } = handleSceneTransition({
+
+                //     });
+                // }
+
                 //! DEV debug
                 if (
                     currentPressedInputs.includes("AltLeft") &&
