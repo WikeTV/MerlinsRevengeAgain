@@ -8,6 +8,7 @@
 import { backgroundTileMap } from "../spriteDefinitions/background.js";
 import { BASE_VIEW_WIDTH } from "../utils/constants.js";
 import { oppositeDirectionLookup } from "../utils/helper.js";
+import { getAdjacentScenes } from "../utils/scenes.js";
 
 const directionAngles = {
     up: 0,
@@ -126,26 +127,10 @@ export const getSceneTransitionBoundaryTiles = ({
     const currentSceneForegroundTiles =
         map.scenes[sceneColumnIndex][sceneRowIndex].foregroundTiles;
 
-    const getSceneSafe = (col, row) => {
-        if (
-            col >= 0 &&
-            col <= map.scenes.length - 1 &&
-            row >= 0 &&
-            row <= map.scenes[0].length - 1
-        ) {
-            return map.scenes[col][row];
-        } else {
-            return null;
-        }
-    };
-
     const adjacentScenes = Object.fromEntries(
-        Object.entries({
-            up: getSceneSafe(sceneColumnIndex, sceneRowIndex - 1),
-            right: getSceneSafe(sceneColumnIndex + 1, sceneRowIndex),
-            down: getSceneSafe(sceneColumnIndex, sceneRowIndex + 1),
-            left: getSceneSafe(sceneColumnIndex - 1, sceneRowIndex),
-        }).filter(([_, value]) => value != null)
+        Object.entries(
+            getAdjacentScenes({ map, sceneColumnIndex, sceneRowIndex })
+        ).filter(([_, value]) => value != null)
     );
 
     // Get the tiles of each neighboring scene which border the current scene
@@ -311,8 +296,12 @@ export const drawSceneTransitionBoundaries = ({
             sourceY,
             sourceW,
             sourceH,
-            drawCoordinates.x + (["up", "down"].includes(tile.direction) ? 12 : 0) * scalingMultiplier,
-            drawCoordinates.y + (["left", "right"].includes(tile.direction) ? 12 : 0) * scalingMultiplier,
+            drawCoordinates.x +
+                (["up", "down"].includes(tile.direction) ? 12 : 0) *
+                    scalingMultiplier,
+            drawCoordinates.y +
+                (["left", "right"].includes(tile.direction) ? 12 : 0) *
+                    scalingMultiplier,
             sourceW * scalingMultiplier,
             sourceH * scalingMultiplier
         );
@@ -322,13 +311,16 @@ export const drawSceneTransitionBoundaries = ({
             sourceY,
             sourceW,
             sourceH,
-            drawCoordinates.x + (["up", "down"].includes(tile.direction) ? 24 : 0) * scalingMultiplier,
-            drawCoordinates.y + (["left", "right"].includes(tile.direction) ? 24 : 0) * scalingMultiplier,
+            drawCoordinates.x +
+                (["up", "down"].includes(tile.direction) ? 24 : 0) *
+                    scalingMultiplier,
+            drawCoordinates.y +
+                (["left", "right"].includes(tile.direction) ? 24 : 0) *
+                    scalingMultiplier,
             sourceW * scalingMultiplier,
             sourceH * scalingMultiplier
         );
 
         //TODO: ensure tiles are edge-aligned
-
     });
 };

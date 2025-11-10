@@ -2,41 +2,93 @@ import { renderSceneTiles } from "./renderScene.js";
 import { rescaleElement } from "../utils/scaling.js";
 import { publicJSONFileLoader } from "../utils/fileFetcher.js";
 import { immutableCopy } from "../utils/helper.js";
-import { drawSceneTransitionBoundaries } from "./transitionHandler.js";
+import {
+    drawSceneTransitionBoundaries,
+    getSceneTransitionBoundaryTiles,
+} from "./transitionHandler.js";
+import { getAdjacentScenes } from "../utils/scenes.js";
 
 export const getSceneManager = ({ tileDisplayCanvasElement }) => {
     const sceneManagerState = {
-        map: null,
+        gameMap: null,
         currentScene: null,
+        currentSceneIndex: { col: 0, row: 0 },
+        transitionTiles: [],
+        adjacentScenes: { top: null, right: null, bottom: null, left: null },
         canvas: tileDisplayCanvasElement,
         ctx: tileDisplayCanvasElement.getContext("2d"),
+        loadAdjacentScene({ direction, entityManager }) {
+            const newSceneManagerState = { ...this };
+
+            // Save current scene's entities (excluding player) back to gameMap ephemeral state
+            newSceneManagerState.gameMap.scenes[this.currentSceneIndex.col][
+                this.currentSceneIndex.row
+            ].entities = entityManager
+                .getCurrentState()
+                .entities.filter((ent) => ent.type !== "Player");
+
+            switch (direction) {
+                case "up":
+                    newSceneManagerState.currentSceneIndex.row -= 1;
+                    break;
+                case "down":
+                    newSceneManagerState.currentSceneIndex.row += 1;
+                    break;
+                case "left":
+                    newSceneManagerState.currentSceneIndex.col -= 1;
+                    break;
+                case "right":
+                    newSceneManagerState.currentSceneIndex.col += 1;
+                    break;
+                default:
+                    throw new Error(
+                        `Invalid direction "${direction}" passed to loadAdjacentScene.`
+                    );
+            }
+            newSceneManagerState.currentScene =
+                newSceneManagerState.gameMap.scenes[
+                    newSceneManagerState.currentSceneIndex.col
+                ][newSceneManagerState.currentSceneIndex.row];
+            newSceneManagerState.adjacentScenes = getAdjacentScenes({
+                map: newSceneManagerState.gameMap,
+                sceneColumnIndex: newSceneManagerState.currentSceneIndex.col,
+                sceneRowIndex: newSceneManagerState.currentSceneIndex.row,
+            });
+            newSceneManagerState.transitionTiles =
+                getSceneTransitionBoundaryTiles({
+                    map: newSceneManagerState.gameMap,
+                    sceneColumnIndex:
+                        newSceneManagerState.currentSceneIndex.col,
+                    sceneRowIndex: newSceneManagerState.currentSceneIndex.row,
+                });
+
+            // Draw scene tiles, then return updated state
+            newSceneManagerState.drawScene();
+            return immutableCopy(newSceneManagerState);
+        },
+        drawScene({ customCanvas, customContext, options } = {}) {
+            if (this.currentScene) {
+                (customContext ?? this.ctx).clearRect(
+                    0,
+                    0,
+                    (customCanvas ?? this.canvas).width,
+                    (customCanvas ?? this.canvas).height
+                );
+                renderSceneTiles(
+                    customCanvas ?? this.canvas,
+                    customContext ?? this.ctx,
+                    this.currentScene,
+                    options
+                );
+            } else {
+                throw new Error(
+                    "No sceneManagerState.currentScene loaded. Unable to render nothing."
+                );
+            }
+            return immutableCopy(sceneManagerState);
+        },
     };
 
-    sceneManagerState.drawScene = ({
-        customCanvas,
-        customContext,
-        options,
-    } = {}) => {
-        if (sceneManagerState.currentScene) {
-            (customContext ?? sceneManagerState.ctx).clearRect(
-                0,
-                0,
-                (customCanvas ?? sceneManagerState.canvas).width,
-                (customCanvas ?? sceneManagerState.canvas).height
-            );
-            renderSceneTiles(
-                customCanvas ?? sceneManagerState.canvas,
-                customContext ?? sceneManagerState.ctx,
-                sceneManagerState.currentScene,
-                options
-            );
-        } else {
-            throw new Error(
-                "No sceneManagerState.currentScene loaded. Unable to render nothing."
-            );
-        }
-        return immutableCopy(sceneManagerState);
-    };
     // Dev method
     sceneManagerState.loadSceneFromFile = async (filePath) => {
         let newScene = await publicJSONFileLoader(filePath);
@@ -57,19 +109,32 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
     };
     sceneManagerState.loadMap = async (filePath) => {
         // Retrieve file data
-        sceneManagerState.map = await publicJSONFileLoader(filePath);
+        sceneManagerState.gameMap = await publicJSONFileLoader(filePath);
 
         // Select initially loaded scene as the one with merlin in it at the start
-        sceneManagerState.map.scenes.forEach((sceneCol) =>
-            sceneCol.forEach(
-                (scene) =>
-                    (sceneManagerState.currentScene = scene.entities?.find(
-                        (entity) => entity.name === "merlin"
-                    )
-                        ? scene
-                        : sceneManagerState.currentScene)
-            )
+        sceneManagerState.gameMap.scenes.forEach((sceneCol, c) =>
+            sceneCol.forEach((scene, r) => {
+                if (
+                    !sceneManagerState.currentScene &&
+                    scene.entities?.find((entity) => entity.name === "merlin")
+                ) {
+                    sceneManagerState.currentScene = scene;
+                    sceneManagerState.currentSceneIndex = { col: c, row: r };
+                    sceneManagerState.adjacentScenes = getAdjacentScenes(
+                        sceneManagerState.gameMap,
+                        c,
+                        r
+                    );
+                    sceneManagerState.transitionTiles =
+                        getSceneTransitionBoundaryTiles({
+                            map: sceneManagerState.gameMap,
+                            sceneColumnIndex: c,
+                            sceneRowIndex: r,
+                        });
+                }
+            })
         );
+
         sceneManagerState.drawScene();
         return immutableCopy(sceneManagerState);
     };
@@ -100,7 +165,7 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
     sceneManagerState.drawTransitionArrows = () => {
         let sceneColumnIndex = 0;
         let sceneRowIndex = 0;
-        sceneManagerState.map.scenes.forEach((sceneColumn, colIndex) =>
+        sceneManagerState.gameMap.scenes.forEach((sceneColumn, colIndex) =>
             sceneColumn.forEach((scene, rowIndex) => {
                 if (scene.name === sceneManagerState.currentScene.name) {
                     sceneColumnIndex = colIndex;
@@ -110,7 +175,7 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
         );
 
         drawSceneTransitionBoundaries({
-            map: sceneManagerState.map,
+            map: sceneManagerState.gameMap,
             sceneRowIndex,
             sceneColumnIndex,
             canvasElement: sceneManagerState.canvas,

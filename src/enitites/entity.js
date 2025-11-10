@@ -17,6 +17,7 @@ import {
 } from "../utils/helper.js";
 import { unitTileMap } from "../spriteDefinitions/units.js";
 import { Vector2D } from "../utils/Vector2D.js";
+import { emitPlayerTouchedSceneEdge } from "../events/onTransitionEdgeCollision.js";
 
 /**
  * Takes all enumerable properties of an object and converts them into a set of
@@ -177,7 +178,7 @@ const DEFAULT_ENTITY = Object.freeze({
         // }
         context.restore();
     },
-    checkWallCollision({ scene, velocityVector }) {
+    checkWallCollision({ scene, velocityVector, entity }) {
         let {
             x: currentCenterX,
             y: currentCenterY,
@@ -188,45 +189,59 @@ const DEFAULT_ENTITY = Object.freeze({
         let desiredNewX = currentCenterX + velocityVector.x;
         let desiredNewY = currentCenterY + velocityVector.y;
 
+        let touchedEdge = null;
         // Prevent entity from running outside the map bounds
         if (desiredNewX - baseWidth / 2 < 0) {
-            velocityVector.x = 0; // + player.baseWidth / 2;
+            velocityVector.x = 0;
+            touchedEdge = "left";
         }
         if (desiredNewY - baseHeight / 2 < 0) {
             velocityVector.y = 0;
+            touchedEdge = "top";
         }
-        if (desiredNewX + baseWidth / 2 > BASE_VIEW_WIDTH) {
+        if (desiredNewX + baseWidth / 2 + 1 > BASE_VIEW_WIDTH) {
+            console.log("RIGHT EDGE");
             velocityVector.x = 0;
+            touchedEdge = "right";
         }
-        if (desiredNewY + baseHeight / 2 > BASE_VIEW_HEIGHT) {
+        if (desiredNewY + baseHeight / 2 + 1 > BASE_VIEW_HEIGHT) {
             velocityVector.y = 0;
+            touchedEdge = "bottom";
+        }
+
+        // Check if scene should transition when player touches edge
+        if (this.type === "Player" && touchedEdge != null) {
+            emitPlayerTouchedSceneEdge({
+                sceneEdge: touchedEdge,
+                positionCoordinates: { x: this.x, y: this.y },
+            });
         }
 
         // Get tiles in adjacent squares (no corners)
 
-        const expectedPlayerCoordinates = {
+        const expectedEntityCoordinates = {
             leftCenter: desiredNewX - baseWidth / 2,
             rightCenter: desiredNewX + baseWidth / 2,
             topCenter: desiredNewY - baseHeight / 2,
             bottomCenter: desiredNewY + baseHeight / 2,
         };
 
-        let expectedPlayerTileGridCoordinates = {
+        let expectedEntityTileGridCoordinates = {
             left: getTileColumnFromPlayfieldX(
-                expectedPlayerCoordinates.leftCenter
+                expectedEntityCoordinates.leftCenter
             ),
             right: getTileColumnFromPlayfieldX(
-                expectedPlayerCoordinates.rightCenter
+                expectedEntityCoordinates.rightCenter
             ),
-            top: getTileRowFromPlayfieldY(expectedPlayerCoordinates.topCenter),
+            top: getTileRowFromPlayfieldY(expectedEntityCoordinates.topCenter),
             bottom: getTileRowFromPlayfieldY(
-                expectedPlayerCoordinates.bottomCenter
+                expectedEntityCoordinates.bottomCenter
             ),
             x: getTileColumnFromPlayfieldX(desiredNewX),
             y: getTileRowFromPlayfieldY(desiredNewY),
         };
 
-        const currentPlayerTileGridCoordinates = {
+        const currentEntityTileGridCoordinates = {
             left: getTileColumnFromPlayfieldX(currentCenterX - baseWidth / 2),
             right: getTileColumnFromPlayfieldX(currentCenterX + baseWidth / 2),
             top: getTileRowFromPlayfieldY(currentCenterY - baseHeight / 2),
@@ -235,81 +250,81 @@ const DEFAULT_ENTITY = Object.freeze({
             y: getTileColumnFromPlayfieldX(currentCenterY),
         };
 
-        // For each adjacent grid square, if it contains a foreground tile, and player hitbox plane has overlapped, prevent player from moving that direction.
+        // For each adjacent grid square, if it contains a foreground tile, and Entity hitbox plane has overlapped, prevent Entity from moving that direction.
         const isTileAbove =
-            currentPlayerTileGridCoordinates.y >= 1
+            currentEntityTileGridCoordinates.y >= 1
                 ? Boolean(
                       scene.foregroundTiles[
-                          currentPlayerTileGridCoordinates.left
-                      ][currentPlayerTileGridCoordinates.y - 1] ||
+                          currentEntityTileGridCoordinates.left
+                      ][currentEntityTileGridCoordinates.y - 1] ||
                           scene.foregroundTiles[
-                              currentPlayerTileGridCoordinates.right
-                          ][currentPlayerTileGridCoordinates.y - 1]
+                              currentEntityTileGridCoordinates.right
+                          ][currentEntityTileGridCoordinates.y - 1]
                   )
                 : true;
         const isTileBelow =
-            currentPlayerTileGridCoordinates.y < GRID_MAX_Y_INDEX
+            currentEntityTileGridCoordinates.y < GRID_MAX_Y_INDEX
                 ? Boolean(
                       scene.foregroundTiles[
-                          currentPlayerTileGridCoordinates.right
-                      ][currentPlayerTileGridCoordinates.y + 1] ||
+                          currentEntityTileGridCoordinates.right
+                      ][currentEntityTileGridCoordinates.y + 1] ||
                           scene.foregroundTiles[
-                              currentPlayerTileGridCoordinates.left
-                          ][currentPlayerTileGridCoordinates.y + 1]
+                              currentEntityTileGridCoordinates.left
+                          ][currentEntityTileGridCoordinates.y + 1]
                   )
                 : true;
         const isTileLeft =
-            currentPlayerTileGridCoordinates.x >= 1
+            currentEntityTileGridCoordinates.x >= 1
                 ? Boolean(
                       scene.foregroundTiles[
-                          currentPlayerTileGridCoordinates.x - 1
-                      ][currentPlayerTileGridCoordinates.top] ||
+                          currentEntityTileGridCoordinates.x - 1
+                      ][currentEntityTileGridCoordinates.top] ||
                           scene.foregroundTiles[
-                              currentPlayerTileGridCoordinates.x - 1
-                          ][currentPlayerTileGridCoordinates.bottom]
+                              currentEntityTileGridCoordinates.x - 1
+                          ][currentEntityTileGridCoordinates.bottom]
                   )
                 : true;
         const isTileRight =
-            currentPlayerTileGridCoordinates.x < GRID_MAX_X_INDEX
+            currentEntityTileGridCoordinates.x < GRID_MAX_X_INDEX
                 ? Boolean(
                       scene.foregroundTiles[
-                          currentPlayerTileGridCoordinates.x + 1
-                      ][currentPlayerTileGridCoordinates.top] ||
+                          currentEntityTileGridCoordinates.x + 1
+                      ][currentEntityTileGridCoordinates.top] ||
                           scene.foregroundTiles[
-                              currentPlayerTileGridCoordinates.x + 1
-                          ][currentPlayerTileGridCoordinates.bottom]
+                              currentEntityTileGridCoordinates.x + 1
+                          ][currentEntityTileGridCoordinates.bottom]
                   )
                 : true;
 
         if (
             isTileAbove &&
             velocityVector.y < 0 &&
-            expectedPlayerTileGridCoordinates.top <
-                expectedPlayerTileGridCoordinates.y
+            expectedEntityTileGridCoordinates.top <
+                expectedEntityTileGridCoordinates.y
         ) {
             velocityVector.y = 0;
         }
         if (
             isTileBelow &&
             velocityVector.y > 0 &&
-            expectedPlayerTileGridCoordinates.bottom >
-                expectedPlayerTileGridCoordinates.y
+            expectedEntityTileGridCoordinates.bottom >
+                expectedEntityTileGridCoordinates.y
         ) {
             velocityVector.y = 0;
         }
         if (
             isTileLeft &&
             velocityVector.x < 0 &&
-            expectedPlayerTileGridCoordinates.left <
-                expectedPlayerTileGridCoordinates.x
+            expectedEntityTileGridCoordinates.left <
+                expectedEntityTileGridCoordinates.x
         ) {
             velocityVector.x = 0;
         }
         if (
             isTileRight &&
             velocityVector.x > 0 &&
-            expectedPlayerTileGridCoordinates.right >
-                expectedPlayerTileGridCoordinates.x
+            expectedEntityTileGridCoordinates.right >
+                expectedEntityTileGridCoordinates.x
         ) {
             velocityVector.x = 0;
         }
@@ -400,6 +415,9 @@ export const createEntity = (customFieldValues = {}) => {
         // Allow each entity to be created with any of its field values overwritten, and new ones added
         customFieldValues
     );
+
+    newEntity.x = Math.round(Number(newEntity.x));
+    newEntity.y = Math.round(Number(newEntity.y));
 
     Object.keys(newEntity.states ?? {}).forEach((stateKey) => {
         if (newEntity.states[stateKey].updateState) {

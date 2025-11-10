@@ -107,6 +107,14 @@ const spawnSceneEntities = ({ entityManagerState }) => {
     return immutableCopy(newEntityManagerState);
 };
 
+const spawnPlayerEntity = ({ entityManagerState, playerEntityValues }) => {
+    const newEntityManagerState = createAndSpawnEntity({
+        entityValues: playerEntityValues,
+        entityManagerState: entityManagerState,
+    });
+    return newEntityManagerState;
+};
+
 const clearScreen = ({ entityManagerState }) => {
     // Clear previous frame
     entityManagerState.ctx.clearRect(
@@ -169,16 +177,19 @@ export const getEntityManager = ({ entityCanvas, scene }) => {
         spawnSceneEntities(params = {}) {
             return spawnSceneEntities({ entityManagerState: this, ...params });
         },
+        spawnPlayerEntity(params = {}) {
+            return spawnPlayerEntity({ entityManagerState: this, ...params });
+        },
         updateEntities(params = {}) {
             return updateEntities({ entityManagerState: this, ...params });
         },
         despawnEntities(condition) {
             return despawnEntities({ entityManagerState: this }, condition);
         },
-        processEvents(allCurrentEvents, { onSuccess }) {
+        processEvents(allCurrentEntityEvents, { onSuccess }) {
             // An event has a target entity and a source entity
             // Either of these can be overridden by the event's side effect
-            let entities = allCurrentEvents.reduce(
+            let entities = allCurrentEntityEvents.reduce(
                 (entityArrayState, event) => {
                     let nextEntityArrayState = Array.from(entityArrayState);
                     if (event.sideEffects) {
