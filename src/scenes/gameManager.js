@@ -111,7 +111,6 @@ const gameModes = {
 
             // Scene transition arrows should render once to background canvas, if there are no enemies left alive in this scene
             if (gameState.canTransition && !gameState.isTransitionArrowsDrawn) {
-                console.log("drawing transition arrows");
                 sceneManager?.drawTransitionArrows();
             }
 

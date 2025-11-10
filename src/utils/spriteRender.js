@@ -52,7 +52,6 @@ export const drawEntities = (
             entity.state.reverseImage ? -1 * spriteWidth : spriteWidth,
             spriteHeight
         );
-        console.log(entity.state.frameCount);
         if (
             Math.floor(entity.state.frameCount) <
             activeAnimationState.animationFrames.length - 1
@@ -61,7 +60,6 @@ export const drawEntities = (
                 activeAnimationState.animationSpeed ?? 0.2; // Default animation speed will be 5 frames per image
         } else {
             entity.state.frameCount = 0;
-            console.log(activeAnimationState?.noLoop);
             if (activeAnimationState?.noLoop) {
                 entity.state.animationTimer = 0;
                 entity.state.activeAnimationState = "idle";

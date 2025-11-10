@@ -200,7 +200,6 @@ const DEFAULT_ENTITY = Object.freeze({
             touchedEdge = "top";
         }
         if (desiredNewX + baseWidth / 2 + 1 > BASE_VIEW_WIDTH) {
-            console.log("RIGHT EDGE");
             velocityVector.x = 0;
             touchedEdge = "right";
         }

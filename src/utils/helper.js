@@ -30,7 +30,6 @@ export const objectContains = (object, match) => {
  */
 export const assignDeep = (target, ...sources) => {
     const nextSources = Array.from(sources || []);
-    console.log(target, sources);
     try {
         if (!sources.length) return target;
         const source = nextSources.shift();
