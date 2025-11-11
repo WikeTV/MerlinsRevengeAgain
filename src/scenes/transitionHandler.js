@@ -148,7 +148,7 @@ export const getSceneTransitionBoundaryTiles = ({
     const adjacentSceneHostility = Object.fromEntries(
         Object.entries(adjacentScenes).map(([direction, scene]) => [
             direction,
-            scene.entities?.some((ent) => ent.team !== "blue"), //TODO: "blue" doesn't seem very cash-money. might have to make this a constant
+            scene.entities?.some((ent) => ent.team !== "blue" && !ent.isDead), //TODO: "blue" should be an imported const, probably
         ])
     );
 

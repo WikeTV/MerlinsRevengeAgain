@@ -158,21 +158,10 @@ export const getSceneManager = ({ tileDisplayCanvasElement }) => {
     };
 
     sceneManagerState.drawTransitionArrows = () => {
-        let sceneColumnIndex = 0;
-        let sceneRowIndex = 0;
-        sceneManagerState.gameMap.scenes.forEach((sceneColumn, colIndex) =>
-            sceneColumn.forEach((scene, rowIndex) => {
-                if (scene.name === sceneManagerState.currentScene.name) {
-                    sceneColumnIndex = colIndex;
-                    sceneRowIndex = rowIndex;
-                }
-            })
-        );
-
         drawSceneTransitionBoundaries({
             map: sceneManagerState.gameMap,
-            sceneRowIndex,
-            sceneColumnIndex,
+            sceneRowIndex: sceneManagerState.currentSceneIndex.row,
+            sceneColumnIndex: sceneManagerState.currentSceneIndex.col,
             canvasElement: sceneManagerState.canvas,
             context: sceneManagerState.ctx,
         });

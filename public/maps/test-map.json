@@ -1224,14 +1224,6 @@
                         "spriteSheetId": "character-sprites"
                     },
                     {
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 88.52094901564867,
-                        "y": 57.50630994447249,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    },
-                    {
                         "type": "GoblinArcher",
                         "team": "green",
                         "baseWidth": 16,
@@ -2049,7 +2041,16 @@
                     ]
                 ],
                 "name": "right",
-                "entities": []
+                "entities": [
+                    {
+                        "type": "BoulderMonster",
+                        "team": "green",
+                        "x": 88.52094901564867,
+                        "y": 57.50630994447249,
+                        "frameCount": 0,
+                        "spriteSheetId": "character-sprites"
+                    }
+                ]
             },
             {
                 "name": "",
