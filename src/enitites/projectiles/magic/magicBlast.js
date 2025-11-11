@@ -162,7 +162,8 @@ export const createMagicBlast = ({ ...initialValues } = {}) => {
                         ...entities.filter(
                             (ent) =>
                                 ent.classification !== "projectile" &&
-                                ent.team !== currentEntityState.team
+                                ent.team !== currentEntityState.team &&
+                                !ent.isDead
                         ),
                     ];
 
@@ -196,8 +197,11 @@ export const createMagicBlast = ({ ...initialValues } = {}) => {
                                             hitIntensity;
                                         // An entitiy must have exactly 0 HP to be considered dead.
                                         // Immortal entities will always have negative HP, and will never cross the threshold of 0
-                                        if(targetEntity.currentHP >= 0 && newTargetEntityState.currentHP <= 0) {
-                                            newTargetEntityState.currentHP = 0
+                                        if (
+                                            targetEntity.currentHP >= 0 &&
+                                            newTargetEntityState.currentHP <= 0
+                                        ) {
+                                            newTargetEntityState.currentHP = 0;
                                         }
                                         return {
                                             targetEntity: newTargetEntityState,

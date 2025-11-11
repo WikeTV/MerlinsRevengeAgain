@@ -1,10 +1,13 @@
-{
-    "name": "mr1",
-    "scenes": [
+// using MR1 as the mock map, because I don't want to create
+// a new map just for testing :)
+
+export const mockMap = {
+    name: "mr1",
+    scenes: [
         [
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
@@ -14,7 +17,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -25,7 +28,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -36,7 +39,7 @@
                         "episode_one/tile_tree02.tif",
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -47,7 +50,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -58,7 +61,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -69,7 +72,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -80,7 +83,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -91,7 +94,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -102,7 +105,7 @@
                         "episode_one/tile_tree02.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -113,7 +116,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -124,7 +127,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -135,7 +138,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -146,7 +149,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -157,7 +160,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -168,7 +171,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -179,7 +182,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -190,7 +193,7 @@
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -201,10 +204,10 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
-                    ]
+                        "episode_one/tile_boulder.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -214,7 +217,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -225,7 +228,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -236,7 +239,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -247,7 +250,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -258,7 +261,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -269,7 +272,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -280,7 +283,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -291,7 +294,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -302,7 +305,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -313,7 +316,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -324,7 +327,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -335,7 +338,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -346,7 +349,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -357,7 +360,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -368,7 +371,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_sign_rox.tif",
@@ -379,7 +382,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -390,7 +393,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -401,34 +404,38 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "entities": [
+                entities: [
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 398.6472670074715,
-                        "y": 190.76681085332285,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 398.6472670074715,
+                        y: 190.76681085332285,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 235.5642941407786,
-                        "y": 140.43255996854109,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 235.5642941407786,
+                        y: 140.43255996854109,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
                 ],
-                "name": "1-3"
+                name: "1-3",
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
@@ -438,7 +445,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -449,7 +456,7 @@
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -460,7 +467,7 @@
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -471,29 +478,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
-                    ],
-                    [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
-                    ],
-                    [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
                     ],
                     [
                         null,
@@ -504,7 +489,29 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
+                    ],
+                    [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "episode_one/tile_boulder.tif",
+                        "episode_one/tile_boulder.tif",
+                    ],
+                    [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "episode_one/tile_tree.tif",
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -515,7 +522,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -526,7 +533,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -537,7 +544,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -548,7 +555,29 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
+                    ],
+                    [
+                        "episode_one/tile_tree02.tif",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                    ],
+                    [
+                        "episode_one/tile_tree02.tif",
+                        "episode_one/tile_tree02.tif",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -559,7 +588,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -570,29 +599,7 @@
                         null,
                         null,
                         null,
-                        null
-                    ],
-                    [
-                        "episode_one/tile_tree02.tif",
                         null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
-                    ],
-                    [
-                        "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif",
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -603,7 +610,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -614,7 +621,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -625,10 +632,10 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
-                    ]
+                        "episode_one/tile_tree.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -638,7 +645,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -649,7 +656,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -660,7 +667,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -671,7 +678,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -682,7 +689,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -693,7 +700,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -704,7 +711,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -715,7 +722,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -726,7 +733,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -737,7 +744,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_sign_rox.tif",
@@ -748,7 +755,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -759,7 +766,7 @@
                         "episode_one/tile_flowers.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -770,7 +777,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -781,7 +788,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -792,7 +799,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -803,7 +810,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -814,7 +821,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -825,34 +832,38 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "entities": [
+                entities: [
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 455.02162799842705,
-                        "y": 111.23869445536766,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 455.02162799842705,
+                        y: 111.23869445536766,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 266.2681871804955,
-                        "y": 197.31026346834446,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 266.2681871804955,
+                        y: 197.31026346834446,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
                 ],
-                "name": "1-2"
+                name: "1-2",
             },
             {
-                "spriteSheet": "tileset",
-                "backgroundTiles": [
+                spriteSheet: "tileset",
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -862,7 +873,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -873,7 +884,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -884,7 +895,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -895,7 +906,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -906,7 +917,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -917,7 +928,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_flowers.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -928,7 +939,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -939,7 +950,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -950,7 +961,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -961,7 +972,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -972,7 +983,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -983,7 +994,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -994,7 +1005,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1005,7 +1016,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_sign_rox.tif",
@@ -1016,7 +1027,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_flowers.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1027,7 +1038,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1038,7 +1049,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1049,10 +1060,10 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_gob_sign_down.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "foregroundTiles": [
+                foregroundTiles: [
                     [
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
@@ -1062,7 +1073,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1073,7 +1084,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1084,7 +1095,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1095,7 +1106,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1106,7 +1117,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1117,7 +1128,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1128,7 +1139,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1139,7 +1150,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1150,7 +1161,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1161,7 +1172,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -1172,7 +1183,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -1183,7 +1194,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [
@@ -1195,7 +1206,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [
@@ -1207,7 +1218,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1218,7 +1229,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1229,47 +1240,47 @@
                         null,
                         null,
                         null,
-                        null
-                    ]
+                        null,
+                    ],
                 ],
-                "entities": [
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "spriteSheetId": "character-sprites",
-                        "x": 443.54531797696546,
-                        "y": 107.0405608412619
+                        type: "GoblinArcher",
+                        team: "green",
+                        spriteSheetId: "character-sprites",
+                        x: 443.54531797696546,
+                        y: 107.0405608412619,
                     },
                     {
-                        "type": "Player",
-                        "name": "merlin",
-                        "team": "blue",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "x": 119.8597896845268,
-                        "y": 180.75112669003505,
-                        "spriteSheetId": "character-sprites"
-                    }
+                        type: "Player",
+                        name: "merlin",
+                        team: "blue",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        x: 119.8597896845268,
+                        y: 180.75112669003505,
+                        spriteSheetId: "character-sprites",
+                    },
                 ],
-                "name": "1-1"
-            }
+                name: "1-1",
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
@@ -1279,7 +1290,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1290,7 +1301,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1301,7 +1312,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1312,7 +1323,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1323,7 +1334,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1334,7 +1345,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1345,7 +1356,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1356,7 +1367,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1367,7 +1378,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1378,7 +1389,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -1389,7 +1400,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1400,7 +1411,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1411,7 +1422,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1422,7 +1433,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1433,7 +1444,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         null,
@@ -1444,7 +1455,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1455,7 +1466,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1466,10 +1477,10 @@
                         null,
                         null,
                         null,
-                        null
-                    ]
+                        null,
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -1479,7 +1490,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1490,7 +1501,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1501,7 +1512,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1512,7 +1523,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1523,7 +1534,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1534,7 +1545,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1545,7 +1556,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1556,7 +1567,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1567,7 +1578,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1578,7 +1589,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1589,7 +1600,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1600,7 +1611,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1611,7 +1622,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1622,7 +1633,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1633,7 +1644,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1644,7 +1655,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1655,7 +1666,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1666,56 +1677,56 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_gob_sign_down.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "entities": [
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 146.673397274104,
-                        "y": 190.6108026249369,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 146.673397274104,
+                        y: 190.6108026249369,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 111.13579000504797,
-                        "y": 137.62746087834427,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 111.13579000504797,
+                        y: 137.62746087834427,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
                 ],
-                "name": "2-1"
-            }
+                name: "2-1",
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
@@ -1725,7 +1736,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1736,7 +1747,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [null, null, null, null, null, null, null, null, null],
@@ -1749,7 +1760,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -1760,7 +1771,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -1771,7 +1782,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -1782,7 +1793,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -1793,7 +1804,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1804,7 +1815,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1815,7 +1826,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1826,7 +1837,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1837,7 +1848,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1848,7 +1859,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1859,7 +1870,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1870,7 +1881,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -1881,7 +1892,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -1892,10 +1903,10 @@
                         null,
                         null,
                         null,
-                        null
-                    ]
+                        null,
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -1905,7 +1916,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_gob_sign_down.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1916,7 +1927,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1927,7 +1938,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1938,7 +1949,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1949,7 +1960,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1960,7 +1971,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1971,7 +1982,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1982,7 +1993,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -1993,7 +2004,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2004,7 +2015,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2015,7 +2026,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2026,7 +2037,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2037,7 +2048,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2048,7 +2059,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2059,7 +2070,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2070,7 +2081,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2081,7 +2092,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2092,82 +2103,82 @@
                         "episode_one/tile_gob_sign_down.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "3-1",
-                "entities": [
+                name: "3-1",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 550.5098435133771,
-                        "y": 239.7173144876325,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 550.5098435133771,
+                        y: 239.7173144876325,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 220.97930338213024,
-                        "y": 186.73397274103988,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 220.97930338213024,
+                        y: 186.73397274103988,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 311.43866733972743,
-                        "y": 48.460373548712774,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 311.43866733972743,
+                        y: 48.460373548712774,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 224.85613326602726,
-                        "y": 234.54820797576983,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 224.85613326602726,
+                        y: 234.54820797576983,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_tree.tif",
@@ -2177,7 +2188,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -2188,7 +2199,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -2199,7 +2210,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -2210,7 +2221,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2221,7 +2232,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2232,7 +2243,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2243,7 +2254,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2254,7 +2265,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2265,7 +2276,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2276,7 +2287,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2287,7 +2298,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2298,7 +2309,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2309,7 +2320,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2320,7 +2331,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2331,7 +2342,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2342,7 +2353,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -2353,7 +2364,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2364,10 +2375,10 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
-                    ]
+                        null,
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -2377,7 +2388,7 @@
                         "episode_one/tile_gob_sign_down.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2388,7 +2399,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2399,7 +2410,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2410,7 +2421,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2421,7 +2432,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2432,7 +2443,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2443,7 +2454,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2454,7 +2465,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2465,7 +2476,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_bat_sign.tif",
@@ -2476,7 +2487,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2487,7 +2498,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2498,7 +2509,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2509,7 +2520,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2520,7 +2531,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2531,7 +2542,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2542,7 +2553,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2553,7 +2564,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2564,63 +2575,63 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "4-1",
-                "entities": [
+                name: "4-1",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 283.65471983846544,
-                        "y": 197.07218576476527,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 283.65471983846544,
+                        y: 197.07218576476527,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 225.5022715800101,
-                        "y": 93.69005552751136,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 225.5022715800101,
+                        y: 93.69005552751136,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 230.02523977788996,
-                        "y": 159.59616355376073,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 230.02523977788996,
+                        y: 159.59616355376073,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         null,
                         "episode_one/tile_boulder.tif",
@@ -2630,7 +2641,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -2641,7 +2652,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -2652,7 +2663,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -2663,7 +2674,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -2674,7 +2685,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -2685,7 +2696,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        null
+                        null,
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [
@@ -2697,7 +2708,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -2708,7 +2719,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -2719,7 +2730,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2730,7 +2741,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2741,7 +2752,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2752,7 +2763,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2763,7 +2774,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2774,7 +2785,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2785,7 +2796,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2796,7 +2807,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -2807,10 +2818,10 @@
                         null,
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
-                    ]
+                        "episode_one/tile_tree.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -2820,7 +2831,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2831,7 +2842,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2842,7 +2853,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2853,7 +2864,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2864,7 +2875,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2875,7 +2886,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2886,7 +2897,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2897,7 +2908,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2908,7 +2919,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2919,7 +2930,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2930,7 +2941,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2941,7 +2952,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2952,7 +2963,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2963,7 +2974,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2974,7 +2985,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2985,7 +2996,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -2996,7 +3007,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3007,120 +3018,120 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "5-2",
-                "entities": [
+                name: "5-2",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 447.1277132761232,
-                        "y": 208.70267541645634,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 447.1277132761232,
+                        y: 208.70267541645634,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 430.32811711256943,
-                        "y": 188.02624936900557,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 430.32811711256943,
+                        y: 188.02624936900557,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 197.7183240787481,
-                        "y": 92.39777889954568,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 197.7183240787481,
+                        y: 92.39777889954568,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 189.31852599697123,
-                        "y": 71.72135285209491,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 189.31852599697123,
+                        y: 71.72135285209491,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 160.24230186774358,
-                        "y": 78.82887430590611,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 160.24230186774358,
+                        y: 78.82887430590611,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 217.74861181221607,
-                        "y": 70.42907622412923,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 217.74861181221607,
+                        y: 70.42907622412923,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 423.2205956587582,
-                        "y": 180.2725896012115,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 423.2205956587582,
+                        y: 180.2725896012115,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 413.5285209490157,
-                        "y": 205.47198384654214,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 413.5285209490157,
+                        y: 205.47198384654214,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         null,
@@ -3130,7 +3141,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3141,7 +3152,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3152,7 +3163,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3163,7 +3174,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3174,7 +3185,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_boulder.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3185,7 +3196,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_tree.tif",
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -3196,7 +3207,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3207,7 +3218,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3218,7 +3229,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -3229,7 +3240,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -3240,7 +3251,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -3251,7 +3262,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -3262,7 +3273,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         null,
@@ -3273,7 +3284,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -3284,7 +3295,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -3295,7 +3306,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -3306,7 +3317,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -3317,10 +3328,10 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
-                    ]
+                        "episode_one/tile_boulder.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -3330,7 +3341,7 @@
                         "episode_one/tile_gob_sign_down.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3341,7 +3352,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3352,7 +3363,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3363,7 +3374,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3374,7 +3385,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3385,7 +3396,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_gob_sign_down.tif",
@@ -3396,7 +3407,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3407,7 +3418,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3418,7 +3429,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3429,7 +3440,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3440,7 +3451,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3451,7 +3462,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3462,7 +3473,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3473,7 +3484,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3484,7 +3495,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3495,7 +3506,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3506,7 +3517,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3517,128 +3528,128 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "5-1",
-                "entities": [
+                name: "5-1",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 376.69863705199396,
-                        "y": 79.47501261988894,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 376.69863705199396,
+                        y: 79.47501261988894,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 323.7152953054013,
-                        "y": 165.41140837960626,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 323.7152953054013,
+                        y: 165.41140837960626,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 131.81221605249874,
-                        "y": 278.48561332660273,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 131.81221605249874,
+                        y: 278.48561332660273,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 213.87178192831902,
-                        "y": 85.93639575971731,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 213.87178192831902,
+                        y: 85.93639575971731,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 80.76728924785462,
-                        "y": 171.2266532054518,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 80.76728924785462,
+                        y: 171.2266532054518,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 58.15244825845533,
-                        "y": 284.94699646643113,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 58.15244825845533,
+                        y: 284.94699646643113,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 290.1161029782938,
-                        "y": 208.70267541645634,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 290.1161029782938,
+                        y: 208.70267541645634,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 352.14538112064616,
-                        "y": 122.76627965673903,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 352.14538112064616,
+                        y: 122.76627965673903,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
@@ -3648,7 +3659,7 @@
                         null,
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3659,7 +3670,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -3670,7 +3681,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         null,
@@ -3681,7 +3692,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [
@@ -3693,7 +3704,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3704,7 +3715,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3715,7 +3726,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3726,7 +3737,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3737,7 +3748,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3748,7 +3759,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3759,7 +3770,7 @@
                         null,
                         null,
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3770,7 +3781,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         "episode_one/tile_tree02.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3781,7 +3792,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3792,7 +3803,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3803,7 +3814,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3814,7 +3825,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -3825,10 +3836,10 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         null,
-                        null
-                    ]
+                        null,
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -3838,7 +3849,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3849,7 +3860,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3860,7 +3871,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3871,7 +3882,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3882,7 +3893,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3893,7 +3904,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3904,7 +3915,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3915,7 +3926,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3926,7 +3937,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3937,7 +3948,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3948,7 +3959,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3959,7 +3970,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3970,7 +3981,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3981,7 +3992,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -3992,7 +4003,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4003,7 +4014,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4014,7 +4025,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4025,55 +4036,55 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "6-2",
-                "entities": [
+                name: "6-2",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 208.70267541645634,
-                        "y": 293.9929328621908,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 208.70267541645634,
+                        y: 293.9929328621908,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 135.68904593639576,
-                        "y": 190.6108026249369,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 135.68904593639576,
+                        y: 190.6108026249369,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 233.90206966178698,
-                        "y": 102.73599192327107,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 233.90206966178698,
+                        y: 102.73599192327107,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         null,
@@ -4083,7 +4094,7 @@
                         null,
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -4094,7 +4105,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -4105,7 +4116,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -4116,7 +4127,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -4127,7 +4138,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -4138,7 +4149,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -4149,7 +4160,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -4160,7 +4171,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -4171,7 +4182,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -4182,7 +4193,7 @@
                         "episode_one/tile_tree02.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -4193,21 +4204,11 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
                         null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        "episode_one/tile_tree.tif"
-                    ],
-                    [
-                        "episode_one/tile_tree02.tif",
                         null,
                         null,
                         null,
@@ -4215,7 +4216,6 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -4226,7 +4226,18 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_tree.tif",
+                    ],
+                    [
+                        "episode_one/tile_tree02.tif",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "episode_one/tile_tree.tif",
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -4237,7 +4248,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -4248,7 +4259,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -4259,7 +4270,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -4270,10 +4281,10 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
-                    ]
+                        "episode_one/tile_boulder.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -4283,7 +4294,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4294,7 +4305,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4305,7 +4316,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4316,7 +4327,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4327,7 +4338,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4338,7 +4349,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4349,7 +4360,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4360,7 +4371,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4371,7 +4382,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4382,7 +4393,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4393,7 +4404,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4404,7 +4415,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4415,7 +4426,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4426,7 +4437,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4437,7 +4448,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4448,7 +4459,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4459,7 +4470,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/tile_sign_rox.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4470,95 +4481,95 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "6-1",
-                "entities": [
+                name: "6-1",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 40.706713780918726,
-                        "y": 138.2735991923271,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 40.706713780918726,
+                        y: 138.2735991923271,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 177.04189803129734,
-                        "y": 137.62746087834427,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 177.04189803129734,
+                        y: 137.62746087834427,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 270.7319535588087,
-                        "y": 98.85916203937406,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 270.7319535588087,
+                        y: 98.85916203937406,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 246.17869762746088,
-                        "y": 135.04290762241294,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 246.17869762746088,
+                        y: 135.04290762241294,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 94.98233215547704,
-                        "y": 171.2266532054518,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 94.98233215547704,
+                        y: 171.2266532054518,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
@@ -4568,7 +4579,7 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4579,7 +4590,7 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4590,7 +4601,7 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4601,7 +4612,7 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4612,7 +4623,7 @@
                         "episode_one/tile_boulder.tif",
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4623,7 +4634,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4634,7 +4645,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4645,7 +4656,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4656,7 +4667,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4667,7 +4678,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4678,7 +4689,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4689,7 +4700,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4700,7 +4711,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4711,7 +4722,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4722,7 +4733,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4733,7 +4744,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4744,7 +4755,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         "episode_one/tile_boulder.tif",
@@ -4755,10 +4766,10 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         null,
-                        "episode_one/tile_boulder.tif"
-                    ]
+                        "episode_one/tile_boulder.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -4768,7 +4779,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4779,7 +4790,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4790,7 +4801,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4801,7 +4812,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4812,7 +4823,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4823,7 +4834,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4834,7 +4845,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4845,7 +4856,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4856,7 +4867,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4867,7 +4878,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4878,7 +4889,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4889,7 +4900,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4900,7 +4911,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4911,7 +4922,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4922,7 +4933,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4933,7 +4944,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4944,7 +4955,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -4955,33 +4966,35 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "7-1",
-                "entities": [
+                name: "7-1",
+                entities: [
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 461.98889449772844,
-                        "y": 207.41039878849065,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 461.98889449772844,
+                        y: 207.41039878849065,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
         ],
         [
             {
-                "name": "",
-                "foregroundTiles": [[]],
-                "backgroundTiles": [[]],
-                "entities": []
+                name: "",
+                foregroundTiles: [[]],
+                backgroundTiles: [[]],
+                entities: [],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
@@ -4991,7 +5004,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5002,7 +5015,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -5013,7 +5026,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -5024,7 +5037,7 @@
                         "episode_one/tile_tree.tif",
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         null,
@@ -5035,7 +5048,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5046,7 +5059,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5057,7 +5070,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5068,7 +5081,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5079,7 +5092,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5090,7 +5103,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5101,7 +5114,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5112,7 +5125,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5123,7 +5136,7 @@
                         null,
                         null,
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5134,7 +5147,7 @@
                         null,
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5145,7 +5158,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5156,7 +5169,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5167,7 +5180,7 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
+                        "episode_one/tile_tree.tif",
                     ],
                     [
                         "episode_one/tile_tree.tif",
@@ -5178,10 +5191,10 @@
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
                         "episode_one/tile_tree.tif",
-                        "episode_one/tile_tree.tif"
-                    ]
+                        "episode_one/tile_tree.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -5191,7 +5204,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5202,7 +5215,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5213,7 +5226,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5224,7 +5237,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5235,7 +5248,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5246,7 +5259,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5257,7 +5270,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5268,7 +5281,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5279,7 +5292,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5290,7 +5303,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5301,7 +5314,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5312,7 +5325,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5323,7 +5336,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5334,7 +5347,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5345,7 +5358,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5356,7 +5369,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5367,7 +5380,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5378,51 +5391,53 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "8-2",
-                "entities": [
+                name: "8-2",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 297.8697627460878,
-                        "y": 209.994952044422,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 297.8697627460878,
+                        y: 209.994952044422,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 334.0535083291267,
-                        "y": 127.28924785461888,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 334.0535083291267,
+                        y: 127.28924785461888,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 277.8394750126199,
-                        "y": 188.02624936900557,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 277.8394750126199,
+                        y: 188.02624936900557,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
             },
             {
-                "spriteSheet": "tileset",
-                "foregroundTiles": [
+                spriteSheet: "tileset",
+                foregroundTiles: [
                     [
                         null,
                         null,
@@ -5432,7 +5447,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         null,
-                        "episode_one/tile_boulder.tif"
+                        "episode_one/tile_boulder.tif",
                     ],
                     [
                         null,
@@ -5443,7 +5458,7 @@
                         null,
                         "episode_one/tile_tree02.tif",
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [null, null, null, null, null, null, null, null, null],
                     [null, null, null, null, null, null, null, null, null],
@@ -5456,7 +5471,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5467,7 +5482,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5478,7 +5493,7 @@
                         null,
                         null,
                         null,
-                        null
+                        null,
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5489,7 +5504,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5500,7 +5515,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5511,7 +5526,7 @@
                         null,
                         null,
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5522,7 +5537,7 @@
                         null,
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5533,7 +5548,7 @@
                         "episode_one/tile_boulder.tif",
                         "episode_one/tile_boulder.tif",
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5544,7 +5559,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5555,7 +5570,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5566,7 +5581,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5577,7 +5592,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5588,7 +5603,7 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
+                        "episode_one/tile_tree02.tif",
                     ],
                     [
                         "episode_one/tile_tree02.tif",
@@ -5599,10 +5614,10 @@
                         null,
                         null,
                         null,
-                        "episode_one/tile_tree02.tif"
-                    ]
+                        "episode_one/tile_tree02.tif",
+                    ],
                 ],
-                "backgroundTiles": [
+                backgroundTiles: [
                     [
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
@@ -5612,7 +5627,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5623,7 +5638,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5634,7 +5649,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5645,7 +5660,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5656,7 +5671,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5667,7 +5682,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5678,7 +5693,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5689,7 +5704,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5700,7 +5715,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5711,7 +5726,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5722,7 +5737,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5733,7 +5748,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5744,7 +5759,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5755,7 +5770,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5766,7 +5781,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5777,7 +5792,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5788,7 +5803,7 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
+                        "episode_one/psp/tile_tree.tif",
                     ],
                     [
                         "episode_one/psp/tile_tree.tif",
@@ -5799,87 +5814,89 @@
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
                         "episode_one/psp/tile_tree.tif",
-                        "episode_one/psp/tile_tree.tif"
-                    ]
+                        "episode_one/psp/tile_tree.tif",
+                    ],
                 ],
-                "name": "8-1",
-                "entities": [
+                name: "8-1",
+                entities: [
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 345.03785966683495,
-                        "y": 138.2735991923271,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 345.03785966683495,
+                        y: 138.2735991923271,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 300.4543160020192,
-                        "y": 96.2746087834427,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 300.4543160020192,
+                        y: 96.2746087834427,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 184.14941948510852,
-                        "y": 237.778899545684,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 184.14941948510852,
+                        y: 237.778899545684,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 116.95103483089349,
-                        "y": 186.08783442705706,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 116.95103483089349,
+                        y: 186.08783442705706,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "currentAnimationState": "idle",
-                        "type": "BoulderMonster",
-                        "team": "green",
-                        "x": 88.52094901564867,
-                        "y": 57.50630994447249,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
+                        baseWidth: 45,
+                        baseHeight: 45,
+                        attackRange: 200,
+                        currentAnimationState: "idle",
+                        type: "BoulderMonster",
+                        x: 88.52094901564867,
+                        y: 57.50630994447249,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
                     },
                     {
-                        "type": "GoblinArcher",
-                        "team": "green",
-                        "baseWidth": 16,
-                        "baseHeight": 16,
-                        "attackRange": 75,
-                        "speed": 0.6,
-                        "currentLogicState": "searching",
-                        "x": 318.54618879353865,
-                        "y": 124.0585562847047,
-                        "frameCount": 0,
-                        "spriteSheetId": "character-sprites"
-                    }
-                ]
-            }
-        ]
-    ]
-}
+                        type: "goblinArcher",
+                        team: "green",
+                        baseWidth: 16,
+                        baseHeight: 16,
+                        attackRange: 75,
+                        speed: 0.6,
+                        currentLogicState: "searching",
+                        x: 318.54618879353865,
+                        y: 124.0585562847047,
+                        frameCount: 0,
+                        spriteSheetId: "character-sprites",
+                    },
+                ],
+            },
+        ],
+    ],
+};

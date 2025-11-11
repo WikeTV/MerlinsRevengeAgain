@@ -32,11 +32,6 @@ const updatePlayerState = function (params) {
         playerVelocityVector.x += currentEntityState.speed;
     }
 
-    playerVelocityVector = currentEntityState.checkWallCollision({
-        scene,
-        velocityVector: playerVelocityVector,
-    });
-
     // Determine if animation should be walking or standing still
     if (
         userInput.actions.includes("moveUp") ||
@@ -209,7 +204,8 @@ const Player = (initialValues = {}) => {
                 updateState: updatePlayerState,
             },
         },
-        type: "player",
+        type: "Player",
+        speed: 1,
         ...initialValues,
     };
 

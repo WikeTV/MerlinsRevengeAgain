@@ -1,5 +1,7 @@
 import {
     calculateSceneScalingMultiplier,
+    getTileColumnFromPlayfieldX,
+    getTileRowFromPlayfieldY,
     rescaleElement,
 } from "../utils/scaling.js";
 import { getSceneManager } from "./sceneManager.js";
@@ -11,21 +13,21 @@ import { drawStatusText } from "../utils/textRender.js";
 import {
     TARGET_FRAMERATE,
     MILLISECONDS_PER_FRAME,
+    BASE_VIEW_WIDTH,
+    BASE_VIEW_HEIGHT,
 } from "../utils/constants.js";
 import { getEventManager } from "../events/eventManager.js";
 import { getCutsceneManager } from "../cutscenes/cutsceneManager.js";
+import { SCENE_EDGE_COLLISION_EVENT_NAME } from "../events/onTransitionEdgeCollision.js";
 
 const overlappingCanvasDisplayStyle = {
     display: "block",
 };
 
 const GAME_STATE = {
-    isDevMode: false,
-    gameMode: "coreGameplay",
-    isPaused: false,
-    scalingMultiplier: calculateSceneScalingMultiplier(
-        document.documentElement
-    ),
+    // Constants
+    isDebugMode: false,
+    canDebug: false,
     loadingHeading: document.getElementById("loading"),
     canvasContainer: document.getElementById("canvas-container"),
     overlayCanvasElement: document.getElementById("canvas-overlay"),
@@ -49,6 +51,15 @@ const GAME_STATE = {
             scalingMultiplierOverride ?? this.scalingMultiplier
         );
     },
+
+    // Stateful variables
+    gameMode: "coreGameplay",
+    isPaused: false,
+    canTransition: false,
+    isTransitionArrowsDrawn: false,
+    scalingMultiplier: calculateSceneScalingMultiplier(
+        document.documentElement
+    ),
 };
 
 const initialGameState = Object.assign({}, GAME_STATE);
@@ -88,18 +99,23 @@ const gameModes = {
         // Callback function to render current map and entities to screen
         animate: async (
             gameState,
-            { entityManager, inputManager, frameRateManager }
+            { entityManager, inputManager, frameRateManager, sceneManager }
         ) => {
             // Entities
             entityManager.clearScreen().drawEntities({
                 entities: entityManager.entities,
                 ctx: entityManager.ctx,
                 scalingMultiplier: gameState.scalingMultiplier,
-                showHitbox: gameState.isDevMode,
+                showHitbox: gameState.isDebugMode, //? DEBUG: show entity hitboxes
             });
 
-            // //? DEV: status text to show various current game state values
-            if (gameState.isDevMode) {
+            // Scene transition arrows should render once to background canvas, if there are no enemies left alive in this scene
+            if (gameState.canTransition && !gameState.isTransitionArrowsDrawn) {
+                sceneManager?.drawTransitionArrows();
+            }
+
+            // //? DEBUG: status text to show various current game state values
+            if (gameState.isDebugMode) {
                 const currentPressedInputs = inputManager.getPressedInputs();
                 const currentInputActions =
                     inputManager.getActivatedActions().actions;
@@ -127,6 +143,21 @@ const gameModes = {
                     "Player HP: " + (player ? player.currentHP : "DEAD"),
                     4
                 );
+                drawStatusText(
+                    ctx,
+                    "Player Position: " +
+                        "x: " +
+                        player?.x +
+                        ", y: " +
+                        player?.y,
+                    5
+                );
+                drawStatusText(
+                    ctx,
+                    "Transition Active: " +
+                        (gameState.canTransition ? "True" : "False"),
+                    6
+                );
             }
         },
         // Callback function to handle updating the game state each frame
@@ -144,8 +175,39 @@ const gameModes = {
                 gameManagers;
 
             const currentPressedInputs = inputManager.getPressedInputs();
-            const currentInputActions =
-                inputManager.getActivatedActions();
+            const currentInputActions = inputManager.getActivatedActions();
+
+            //? Check if all enemies in scene are dead, and if so, allow transition to neighboring scenes
+            if (
+                !lastState.canTransition &&
+                gameManagers?.entityManager?.entities?.find(
+                    (ent) => ent.type === "Player"
+                ) &&
+                !gameManagers?.entityManager?.entities?.some(
+                    (ent) => !ent.isDead && ent.team !== "blue"
+                )
+            ) {
+                nextGameState.canTransition = true;
+                nextGameState.isTransitionArrowsDrawn = false;
+            }
+
+            // Check if DEBUG info can and should be toggled
+            if (
+                currentPressedInputs.includes("KeyI") &&
+                currentGameState.canDebug
+            ) {
+                nextGameManagers.inputManager.acknowledgeInput("KeyI");
+                nextGameState.isDebugMode = !currentGameState.isDebugMode;
+                console.log(
+                    "Debug mode " +
+                        (nextGameState.isDebugMode ? "enabled" : "disabled")
+                );
+            }
+
+            if (lastState.canTransition && !lastState.isTransitionArrowsDrawn) {
+                nextGameManagers.sceneManager.drawTransitionArrows();
+                nextGameState.isTransitionArrowsDrawn = true;
+            }
 
             // Pause and unpause the game when "Escape" is pressed
             if (
@@ -158,13 +220,113 @@ const gameModes = {
                     nextGameState.isPaused = false;
                 } else {
                     console.log("Pause");
+                    console.log({ nextGameState });
                     nextGameState.isPaused = true;
                 }
             }
+
+            // Paused game loops here, to prevent state updates from being saved, while
+            // still allowing user interaction with pause menu, and update of DEBUG info.
             if (nextGameState.isPaused) {
+                //TODO: render "Paused" overlay text
                 return { nextGameState, nextGameManagers };
             } else {
-                //! While game is paused, the below code will NOT execute
+                //! Below code will only execute when the game is unpaused
+                const events = eventManager.snapshotPendingEvents();
+
+                // Check for scene transitions via edge collision event
+                const transitionEvent = events?.find(
+                    (event) => event.name === SCENE_EDGE_COLLISION_EVENT_NAME
+                );
+
+                if (transitionEvent) {
+                    // Whether transition is allowed or not, acknowledge to clear the event
+                    nextGameManagers.eventManager.acknowledgeEvent(
+                        transitionEvent?.id
+                    );
+                    // Logic gating could be better here, but the idea is exit as soon as a check fails
+                    if (lastState.canTransition) {
+                        // Initiate scene transition
+                        const { direction, positionCoordinates } =
+                            transitionEvent;
+                        const tileX = getTileColumnFromPlayfieldX(
+                            positionCoordinates.x
+                        );
+                        const tileY = getTileRowFromPlayfieldY(
+                            positionCoordinates.y
+                        );
+
+                        const canTransitionHere =
+                            sceneManager.transitionTiles.some(
+                                (tile) => tile.x === tileX && tile.y === tileY
+                            );
+
+                        // Tile transition boundary check
+                        if (canTransitionHere) {
+                            //TODO: save previous scene entity state
+
+                            // Load new scene
+                            nextGameManagers.sceneManager =
+                                nextGameManagers.sceneManager.loadAdjacentScene(
+                                    { direction, entityManager }
+                                );
+                            // Spawn entities for new scene
+
+                            // Start by snapshotting the player entity's state, and translating coordinates to the opposite edge
+                            const playerEntity =
+                                gameManagers.entityManager.entities.find(
+                                    (ent) => ent.type === "Player"
+                                );
+                            const newPlayerCoordinates = {
+                                x: positionCoordinates.x,
+                                y: positionCoordinates.y,
+                            };
+                            switch (direction) {
+                                case "left":
+                                    newPlayerCoordinates.x =
+                                        BASE_VIEW_WIDTH -
+                                        playerEntity.baseWidth / 2 -
+                                        1;
+                                    break;
+                                case "right":
+                                    newPlayerCoordinates.x =
+                                        playerEntity.baseWidth / 2 + 1;
+                                    break;
+                                case "up":
+                                    newPlayerCoordinates.y =
+                                        BASE_VIEW_HEIGHT -
+                                        playerEntity.baseHeight / 2 -
+                                        1;
+                                    break;
+                                case "down":
+                                    newPlayerCoordinates.y =
+                                        playerEntity.baseHeight / 2 + 1;
+                                    break;
+                            }
+
+                            // Spawn entities for new scene, and copy player entity from previous scene to new coordinates
+                            nextGameManagers.entityManager = getEntityManager({
+                                entityCanvas: nextGameState.entityCanvasElement,
+                                scene: nextGameManagers.sceneManager
+                                    .currentScene,
+                            })
+                                .spawnSceneEntities()
+                                .spawnPlayerEntity({
+                                    playerEntityValues: {
+                                        ...playerEntity,
+                                        ...newPlayerCoordinates,
+                                    },
+                                });
+
+                            nextGameState.canTransition = false;
+                            nextGameState.isTransitionArrowsDrawn = false;
+
+                            nextGameManagers.sceneManager.drawScene();
+
+                            return { nextGameState, nextGameManagers };
+                        }
+                    }
+                }
 
                 // Run individual entity logic on each loop
                 nextGameManagers.entityManager = entityManager
@@ -173,8 +335,8 @@ const gameModes = {
                         userInput: currentInputActions,
                         scalingMultiplier: currentGameState.scalingMultiplier,
                     })
-                    // Process events that are queued from the last iteration
-                    .processEvents(eventManager.snapshotPendingEvents(), {
+                    // Process queued events
+                    .processEvents(events, {
                         onSuccess: (event) =>
                             nextGameManagers.eventManager.acknowledgeEvent(
                                 event.id
@@ -183,18 +345,22 @@ const gameModes = {
 
                 nextGameManagers.eventManager.removeAcknowledgedEvents();
 
+                //! TEMP
                 // When player dies, play the "wasted" cutscene, then restart the game
                 const player = entityManager.entities.find(
                     (ent) => ent.name === "merlin"
                 );
-                if (
-                    nextGameManagers?.entityManager?.entities?.length !==
-                        undefined &&
-                    !player
-                ) {
+                if (player && player.isDead) {
                     nextGameState.gameMode = "cutscene";
                     nextGameState.cutsceneName = "wasted";
                 }
+
+                // // Check for scene transition
+                // if (gameState.canTransition && nextGameState.gameMode && checkPlayerIsAtSceneEdge({ player})) {
+                //     const { sceneToLoad } = handleSceneTransition({
+
+                //     });
+                // }
 
                 //! DEV debug
                 if (
@@ -270,8 +436,14 @@ const gameModes = {
     },
 };
 
+/**
+ * Initializes and returns the main game manager, which handles the main game loop and state.
+ * @param {Object} options - Configuration options for the game manager.
+ * @param {boolean} options.canDebug - Whether debug mode can be enabled via keybind.
+ * @returns {Object} The game manager with the main loop function.
+ */
 export const getGameManager = async (options = {}) => {
-    initialGameState.isDevMode = Boolean(options.isDevMode);
+    initialGameState.canDebug = Boolean(options.canDebug);
 
     // Remove loading placeholder
     initialGameState.loadingHeading.style.display = "none";
@@ -305,10 +477,11 @@ export const getGameManager = async (options = {}) => {
     // Main loop
     const loop = async (
         lastState = initialGameState,
-        gameManagers = startingGameManagers
+        gameManagers = startingGameManagers,
+        animationState = {}
     ) => {
         let gameModeFunctions = gameModes[lastState.gameMode];
-        const { nextGameState, nextGameManagers } =
+        let { nextGameState, nextGameManagers } =
             await gameModeFunctions.update(lastState, gameManagers);
 
         if (nextGameState?.gameMode !== lastState?.gameMode) {
@@ -320,7 +493,7 @@ export const getGameManager = async (options = {}) => {
             Object.assign(nextGameManagers, newGameModeManagers);
         }
 
-        // Handle viewport resize
+        // Handle viewport resize (using 2% threshold to avoid excessive resizing)
         // if container size has increased by more than 2%, increase canvas size
         // if container size has decreased below canvas size, decrease canvas size to 98% of container width
         //      - this protects against the container being slightly too small for the game display
@@ -353,9 +526,9 @@ export const getGameManager = async (options = {}) => {
         ); // Timeout derived from TARGET_FRAMERATE
 
         // Draw current state to display
-        requestAnimationFrame(() => {
-            gameModeFunctions.animate(nextGameState, nextGameManagers);
-        });
+        requestAnimationFrame(() =>
+            gameModeFunctions.animate(nextGameState, nextGameManagers)
+        );
     };
 
     return immutableCopy({ ...initialGameState, loop });

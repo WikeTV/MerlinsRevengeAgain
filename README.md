@@ -7,7 +7,9 @@
 The game scene area has position coordinates from x0, y0 to x640, y320.
 Scaling is utilized for display purposes only, and as such, all hitbox detection should utilize non-scaled position values.
 All MR games (1-3) rely on an 18-wide, 9-high, grid of map tiles.
-After MR1, some floor tiles have speed-altering properties for certain entities (TODO: still need to implement this here).
+Floor tiles are currently inert, and wall tiles act as a barrier.
+
+- After MR1, some floor tiles have interaction with colliding entities (TODO: still need to implement this here).
 
 # Style Conventions 
 
@@ -42,13 +44,12 @@ The screen coordinates system is the vertical reverse of a Cartesian coordinate 
 
 This creates a mental challenge when it comes to how we think about mathematical concepts based in the Cartesian plane, such as sine, cosine, angle, etc.
 Most of the difficulty should be handled by the "Vector2D" object and its methods,
-but it should be noted that positional angle measurements are usually rotated 180 degrees, and reversed as a consequence of this.
+but it should be noted that positional angle measurements might not be what you would expect.
 
 # Testing
 
 I have implemented a custom vanilla JS testing library from scratch, taking inspiration from mocha-style libraries, and [this article](https://alexwlchan.net/2023/testing-javascript-without-a-framework/)
 
-To create a new testing suite, add a file in the `/_test/` directory, then load it in an HTML file *after* the `sauce.js` file.
-For your convenience, you can instead import your test file into the `framework.js` file, and run it along with the other tests in this project.
+To create a new testing suite, add a file in the `/_test/` directory, then import your test file into the `_test/framework.js` file, and run it along with the other tests in this project.
 
 To run tests in your browser, navigate to the URL that the tests are imported into. The main test runner endpoint is `/_test`

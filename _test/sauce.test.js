@@ -1,6 +1,6 @@
 // Test to ensure test functions are working
 describe("sauce testing tool", () => {
-    it("sauce successfully pollutes namespace", () => {
+    it("sauce detected in global namespace", () => {
         if (!sauce) {
             throw new Error("NO SAUCE!!!");
         }
