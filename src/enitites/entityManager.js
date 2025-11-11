@@ -190,12 +190,6 @@ export const getEntityManager = ({ entityCanvas, scene }) => {
                     if (event.sideEffects) {
                         nextEntityArrayState = event.sideEffects.reduce(
                             (sideEffectEntities, effect) => {
-                                console.log({
-                                    allCurrentEntityEvents,
-                                    entityArrayState,
-                                    sideEffectEntities,
-                                    effect,
-                                });
                                 const {
                                     targetEntity,
                                     sourceEntity,
