@@ -1,0 +1,9 @@
+- onMagicThrow event error (quick clicks)
+- entity hp values in debug screen
+- balance magic damage and knockback
+- cutscenes
+- HUD
+- potions / stats
+- speed up when scene is cleared
+- menu
+- delta-time logic?

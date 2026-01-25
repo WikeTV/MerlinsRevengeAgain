@@ -4,7 +4,7 @@ import {
     getTileRowFromPlayfieldY,
     rescaleElement,
 } from "../utils/scaling.js";
-import { getSceneManager } from "./sceneManager.js";
+import { getSceneManager } from "../scenes/sceneManager.js";
 import { immutableCopy } from "../utils/helper.js";
 import { getEntityManager } from "../enitites/entityManager.js";
 import { getFramerateTracker } from "../utils/framerateTracker.js";

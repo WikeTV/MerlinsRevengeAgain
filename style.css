@@ -8,6 +8,7 @@
 
 body {
     overflow: visible;
+    background-color: #282828;
 }
 
 canvas {

@@ -9,6 +9,11 @@ export const emitMagicThrow = ({
     sourceEntity,
     targetCoordinate,
 }) => {
+    if (!targetEntity) {
+        //! TEMP - prevents a crash, but at what cost?
+        // Safety return for race condition
+        return;
+    }
     return emitCustomGameEvent({
         name: MAGIC_THROW_EVENT_NAME,
         targetEntity,
