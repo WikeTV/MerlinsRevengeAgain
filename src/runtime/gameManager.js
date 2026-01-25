@@ -106,7 +106,7 @@ const gameModes = {
                 entities: entityManager.entities,
                 ctx: entityManager.ctx,
                 scalingMultiplier: gameState.scalingMultiplier,
-                showHitbox: gameState.isDebugMode, //? DEBUG: show entity hitboxes
+                gameState,
             });
 
             // Scene transition arrows should render once to background canvas, if there are no enemies left alive in this scene
@@ -258,14 +258,16 @@ const gameModes = {
 
                         const canTransitionHere =
                             sceneManager.transitionTiles.some(
-                                (tile) => tile.x === tileX && tile.y === tileY
+                                (tile) =>
+                                    tile.x === tileX &&
+                                    tile.y === tileY &&
+                                    tile.direction === direction // same tile can have multiple directions
                             );
 
                         // Tile transition boundary check
                         if (canTransitionHere) {
-                            //TODO: save previous scene entity state
-
                             // Load new scene
+                            //? Previous scene state is saved by the sceneManager
                             nextGameManagers.sceneManager =
                                 nextGameManagers.sceneManager.loadAdjacentScene(
                                     { direction, entityManager }

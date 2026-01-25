@@ -117,6 +117,7 @@ export const BoulderMonster = (initialValues) => {
         baseWidth: 45,
         baseHeight: 45,
         attackRange: 300,
+        currentHP: 1000,
         spriteSheet: document.getElementById("character-sprites"),
         states: {
             idle: {

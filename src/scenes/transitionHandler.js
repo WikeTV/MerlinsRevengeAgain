@@ -191,6 +191,7 @@ export const getSceneTransitionBoundaryTiles = ({
                 .filter((tile) => tile != null);
 
             return [...passableTiles, ...transitionTileCoordinates];
+            // example entry: { x: 17, y: 8, direction: 'right', color: 'red' }
         },
         []
     );

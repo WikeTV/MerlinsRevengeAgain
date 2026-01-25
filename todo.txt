@@ -1,9 +1,15 @@
-- onMagicThrow event error (quick clicks)
-- entity hp values in debug screen
-- balance magic damage and knockback
-- cutscenes
-- HUD
-- potions / stats
-- speed up when scene is cleared
-- menu
-- delta-time logic?
+- [x] onMagicThrow event error (quick clicks)
+- [x] entity hp values in debug screen
+- [x] fix immortal rock guys
+- [x] check transition arrow direction
+- [ ] empty scenes should not be enterable
+- [ ] balance magic damage and knockback
+- [ ] cutscenes
+- [ ] HUD
+- [ ] potions / stat modifiers
+- [ ] speed up when scene is cleared
+- [ ] menu
+- [ ] events entity state lag issue
+- [ ] spawner
+- [ ] delta-time logic?
+- [ ] soup

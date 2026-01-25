@@ -49,6 +49,7 @@ export const getEventManager = (containerElement) => {
                 (pending) => !this.completedIds[pending.id]
             );
 
+            //TODO: beware high memory over long periods of time
             this.archive = [
                 ...this.archive,
                 newArchiveRecords.map((eventRecord) => {

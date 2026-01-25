@@ -11,29 +11,35 @@ export const getSceneByIndex = ({ map, col, row }) => {
     }
 };
 
-export const getAdjacentScenes = ({
-    map,
-    sceneColumnIndex,
-    sceneRowIndex,
-}) => ({
-    up: getSceneByIndex({
-        map,
-        col: sceneColumnIndex,
-        row: sceneRowIndex - 1,
-    }),
-    right: getSceneByIndex({
-        map,
-        col: sceneColumnIndex + 1,
-        row: sceneRowIndex,
-    }),
-    down: getSceneByIndex({
-        map,
-        col: sceneColumnIndex,
-        row: sceneRowIndex + 1,
-    }),
-    left: getSceneByIndex({
-        map,
-        col: sceneColumnIndex - 1,
-        row: sceneRowIndex,
-    }),
-});
+export const getAdjacentScenes = ({ map, sceneColumnIndex, sceneRowIndex }) => {
+    const adjacentScenes = {
+        up: getSceneByIndex({
+            map,
+            col: sceneColumnIndex,
+            row: sceneRowIndex - 1,
+        }),
+        right: getSceneByIndex({
+            map,
+            col: sceneColumnIndex + 1,
+            row: sceneRowIndex,
+        }),
+        down: getSceneByIndex({
+            map,
+            col: sceneColumnIndex,
+            row: sceneRowIndex + 1,
+        }),
+        left: getSceneByIndex({
+            map,
+            col: sceneColumnIndex - 1,
+            row: sceneRowIndex,
+        }),
+    };
+
+    // Remove empty adjacent scenes
+    Object.keys(adjacentScenes).forEach((direction) => {
+        if (adjacentScenes[direction]?.backgroundTiles?.[0]?.length == 0) {
+            adjacentScenes[direction] = null;
+        }
+    });
+    return adjacentScenes;
+};

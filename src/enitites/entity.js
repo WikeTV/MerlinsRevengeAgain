@@ -78,7 +78,7 @@ const DEFAULT_ENTITY = Object.freeze({
         },
     },
     currentState: "idle",
-    currentHP: 1000,
+    currentHP: undefined,
     isDead: false,
     frameCount: 0,
     animationTimer: 0,
@@ -92,7 +92,7 @@ const DEFAULT_ENTITY = Object.freeze({
         stretchY: 1,
         opacity: 1,
     },
-    draw({ context, scalingMultiplier, showHitbox }) {
+    draw({ context, scalingMultiplier, gameState }) {
         // Do not draw entities that are supposed to despawn
         if (this.shouldDespawn === true) {
             return;
@@ -111,8 +111,8 @@ const DEFAULT_ENTITY = Object.freeze({
 
         context.save();
 
-        // Hitbox visualization
-        if (showHitbox) {
+        if (gameState?.isDebugMode) {
+            // Hitbox visualization
             context.strokeStyle = "red";
             context.strokeRect(
                 scaledX - spriteWidth / 2,
@@ -121,6 +121,19 @@ const DEFAULT_ENTITY = Object.freeze({
                 spriteHeight
             );
             context.strokeStyle = "black";
+
+            // HP total (for mortal entities)
+            if (this.currentHP >= 0) {
+                context.fillStyle = "white";
+                context.font = `oblique bold ${
+                    scalingMultiplier * 8
+                }px Helvetica`;
+                context.fillText(
+                    String(Math.ceil(this.currentHP)),
+                    scalingMultiplier * (this.x - this.baseWidth / 2),
+                    scalingMultiplier * (this.y - this.baseHeight / 2 + 1)
+                );
+            }
         }
 
         // Apply visual modifiers
@@ -340,7 +353,7 @@ const DEFAULT_ENTITY = Object.freeze({
         // Change state to "dead" when HP reaches 0 (`null`, `undefined`, or negative numeric "currentHP" will not trigger a despawn)
         if (
             currentEntityState.currentState !== "recoil" &&
-            currentEntityState.currentState !== "ghost" &&
+            currentEntityState.currentState !== "wasted" &&
             currentEntityState.currentHP === 0
         ) {
             return [
