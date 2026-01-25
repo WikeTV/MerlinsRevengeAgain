@@ -2,14 +2,16 @@
 - [x] entity hp values in debug screen
 - [x] fix immortal rock guys
 - [x] check transition arrow direction
-- [ ] empty scenes should not be enterable
-- [ ] balance magic damage and knockback
+- [x] empty scenes should not be enterable
+- [ ] add tests
+- [ ] events entity state lag issue
+- [ ] balance magic knockback and npc weight
+- [ ] improve collision detection
 - [ ] cutscenes
 - [ ] HUD
 - [ ] potions / stat modifiers
 - [ ] speed up when scene is cleared
 - [ ] menu
-- [ ] events entity state lag issue
 - [ ] spawner
 - [ ] delta-time logic?
 - [ ] soup
